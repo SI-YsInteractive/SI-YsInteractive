@@ -12,7 +12,7 @@ public abstract class ActivableSkill : Skill {
     public override void update(Player player, float passedTime, float chargePower) {
         if (!locked) {
             player.removeLife(passedTime * chargePower);
-            currentCharge += (passedTime * chargePower * boostedChargeMultiplier);
+            currentCharge += (passedTime + (passedTime * chargePower * boostedChargeMultiplier));
             if (currentCharge >= chargeTime) {
                 action(player);
                 currentCharge = 0;
@@ -27,4 +27,5 @@ public abstract class ActivableSkill : Skill {
         //At least 0 to avoid negative charges.
         currentCharge = Mathf.Max(currentCharge - (passedTime * drainPower), 0);
     }
+
 }

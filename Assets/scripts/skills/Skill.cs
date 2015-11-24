@@ -20,9 +20,9 @@ public abstract class Skill : MonoBehaviour{
     /**********************************************************/
 
     /**Tell if the skill is locked by a duration debuff, or not.*/
-    public bool locked;
+    public bool locked = false;
     //Current lock time. if <= 0 : not locked; otherwise locked.
-    protected float lockTime;
+    protected float lockTime = 0;
     
     /**********************************************************/
 
