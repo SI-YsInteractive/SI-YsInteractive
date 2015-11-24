@@ -37,7 +37,7 @@ public class Player : MonoBehaviour {
     }
 
     public void lockRandomSkill(float lockDuration) {
-        skills[UnityEngine.Random.Range(0, skills.Count)].lock(lockDuration);
+        skills[UnityEngine.Random.Range(0, skills.Count)].lockSkill(lockDuration);
     }
 
     /*To use only if we need a simple way to make protections visually disappear simply.
@@ -71,6 +71,7 @@ public class Player : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        //TODO: take the power from the angle and use it to determine the boost power (the "0" parameter).
         currentChargingSkill.update(this, Time.deltaTime, 0);
         foreach(Skill sk in skills) {
             //We check if the skill is locked or not. If it is, then we drain its charge anyway.
