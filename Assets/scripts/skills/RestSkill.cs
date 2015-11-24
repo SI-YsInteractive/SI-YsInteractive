@@ -7,17 +7,15 @@ using System;
 */
 public class RestSkill : Skill {
 
+    //TTODO
     //No action is made in this state.
     protected override void action(Player player) { }
 
-    //No action is made in this state.
-    public override void activate(Player player) { }
 
-    //No time is counted in this state.
-    protected override void updateTime(float passedTime) { }
+
 
     //We add mana instead of draining it.
-    public override void charge(Player player, float passedTime) {
-        player.addMana((manaCost / chargeTime) * passedTime);
+    public override void update(Player player, float passedTime, float chargePower) {
+
     }
 }

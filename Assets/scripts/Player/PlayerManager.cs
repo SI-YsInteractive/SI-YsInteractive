@@ -17,9 +17,13 @@ public class PlayerManager : MonoBehaviour {
         return instance;
     }
 
+    private PlayerManager() {
+        players = new Player[2];
+    }
+
     /**Send damage to one player and then check for the victory of one of the players.*/
-	public void sendDamage(Player target, float dommages) {
-        target.removeLife(dommages);
+	public void sendDamage(Player target, float dommages, DamageType dType) {
+        target.takeDamage(dType, dommages);
     }
 
     /**Get the other player that is not the one in the parameters.*/

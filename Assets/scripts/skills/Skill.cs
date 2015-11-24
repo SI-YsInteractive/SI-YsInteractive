@@ -3,22 +3,22 @@ using System.Collections;
 
 public abstract class Skill : MonoBehaviour{
 
-    /**The total mana cost of the skill. If negative, it becomes a mana gain.*/
-    public float manaCost;
+    /**The life cost of the skill per . If negative, it becomes a mana gain.*/
+    public float lifeCost;
     /**The total charge time of the skill.*/
     public float chargeTime;
-    /**The total chargeMultiplier of the skill.*/
-    public float chargeMultiplier;
+    /**The chargeMultiplier of the skill, if it is charged.*/
+    public float boostedChargeMultiplier;
 
-    //Current charge time in second.
+    //Indicate if the skill is charging (to be activated) or not.
+    protected bool charging;
+
+    //Current charge time in seconds.
     protected float currentCharge;
 
     protected abstract void action(Player player);
+    
 
-    public abstract void activate(Player player);
-
-    protected abstract void updateTime(float passedTime);
-
-    /**Update the charge of the skill. If the skill is charged.*/
-    public abstract void charge(Player player, float passedTime);
+    /**Update the skill if the player is charging it*/
+    public abstract void update(Player player, float passedTime, float boostPower);
 }
