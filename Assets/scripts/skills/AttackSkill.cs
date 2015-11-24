@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-/**Skill that is an simple attack.
+/**Skill that is a simple attack.
 *
 */
 public class AttackSkill : ActivableSkill{

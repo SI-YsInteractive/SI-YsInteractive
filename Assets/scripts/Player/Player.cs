@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Player : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour {
 
     //List of skills of the player.
     public List<Skill> skills;
+    public Skill currentChargingSkill;
 
     public List<Protection> protections;
 
@@ -34,14 +36,18 @@ public class Player : MonoBehaviour {
         removeLife(damages);
     }
 
-/*To use only if we need a simple way to make protections visually disappear simply.
-public void updateProtections() {
-        for(int i = protections.Count; i >= 0; i--) {
-            if(protections[i].isDisabled()) {
-                protections.RemoveAt(i);
+    public void lockRandomSkill(float lockDuration) {
+        skills[UnityEngine.Random.Range(0, skills.Count)].lock(lockDuration);
+    }
+
+    /*To use only if we need a simple way to make protections visually disappear simply.
+    public void updateProtections() {
+            for(int i = protections.Count; i >= 0; i--) {
+                if(protections[i].isDisabled()) {
+                    protections.RemoveAt(i);
+                }
             }
-        }
-    }*/
+        }*/
 
     /**Add a protection to the player*/
     public void addProtection(Protection p) {
@@ -65,8 +71,12 @@ public void updateProtections() {
 
     // Update is called once per frame
     void Update() {
+        currentChargingSkill.update(this, Time.deltaTime, 0);
         foreach(Skill sk in skills) {
-            sk.update(this, Time.deltaTime, 1);
+            //We check if the skill is locked or not. If it is, then we drain its charge anyway.
+            if (sk != currentChargingSkill || sk.locked) {
+                sk.drainCharge(Time.deltaTime);
+            }
         }
     }
 }
