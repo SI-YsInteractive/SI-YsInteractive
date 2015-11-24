@@ -252,7 +252,7 @@ GameObject:
   - 114: {fileID: 731765943}
   m_Layer: 5
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,7 +267,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 57265fd715526fa448d9de4b63a5f0e1, type: 2}
+  - {fileID: 2100000, guid: 621a44b03d4de324ebc37431a40b0565, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -308,7 +308,7 @@ Transform:
   m_GameObject: {fileID: 731765938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.44000006, y: 0, z: -.769999981}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -320,11 +320,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 731765938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db70a90b656cdf14cb6abdb22f61907e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c7fefdc15b9f5646a25731f2eaf1976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   picked: 0
   playerId: 1
+  touchId: -1
+  minX: 0
+  maxX: 0
 --- !u!1 &864126886
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +342,7 @@ GameObject:
   - 114: {fileID: 864126887}
   m_Layer: 5
   m_Name: Player2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,11 +355,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 864126886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db70a90b656cdf14cb6abdb22f61907e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c7fefdc15b9f5646a25731f2eaf1976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   picked: 0
   playerId: 2
+  touchId: -1
+  minX: 0
+  maxX: 0
 --- !u!23 &864126889
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -367,7 +373,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6c7875566c6ff3f468c1d96a33102666, type: 2}
+  - {fileID: 2100000, guid: 1dc4aee9e39728c4cba830c39c06cc28, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -408,7 +414,7 @@ Transform:
   m_GameObject: {fileID: 864126886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.71000004, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
