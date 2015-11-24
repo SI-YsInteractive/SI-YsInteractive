@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
     //List of skills of the player.
     public List<Skill> skills;
 
+	public Skill currentSkill;
+
     //Return player's life.
     public float getLife() {
         return life;

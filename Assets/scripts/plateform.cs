@@ -4,13 +4,14 @@ using System.Collections;
 public class plateform : MonoBehaviour {
 
 	public SkillType skillType; 
-	// private Skill skill;
+	private Skill skill;
 
 	void Awake()
 	{
 		switch (skillType) {
 
 		case SkillType.ATTACK:
+			skill = gameObject.AddComponent<AttackSkill>();
 			break;
 		case SkillType.DEFENSE:
 			break;
@@ -29,7 +30,7 @@ public class plateform : MonoBehaviour {
 	public void setPlayerSkill(GameObject player)
 	{
 		//player.GetComponent<Player>().skill = skill;
-		player.GetComponent<Player>().currentSkill = skillType;
+		//player.GetComponent<Player>().currentSkill = skillType;
 	}
 
 }

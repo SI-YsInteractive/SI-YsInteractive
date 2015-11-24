@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour {
         if(picked)
         {
             Vector3 pos = Input.mousePosition;
-            if (playerId == 1)
+            if (playerId == 0)
                 pos.x = Mathf.Min(pos.x, Screen.width / 2f);
             else
                 pos.x = Mathf.Max(pos.x, Screen.width / 2f);   
@@ -38,9 +38,9 @@ public class PlayerMovement : MonoBehaviour {
 			if(Input.GetMouseButton(0))
 			{
 				float tmpPos = Input.mousePosition.y;
-				if(playerId == (int)(Input.mousePosition.x/(Screen.width/2f))+1)
+				if(playerId == (int)(Input.mousePosition.x/(Screen.width/2f)))
 				{
-					if(playerId == 1)
+					if(playerId == 0)
 					{
 						if(mouseY < tmpPos)
 							angle = Mathf.Min(angle+rotationSpeed,45f);
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour {
 						}
 					}
 
-					if(playerId == (int)(Input.GetTouch(i).position.x/(Screen.width/2f))+1)
+					if(playerId == (int)(Input.GetTouch(i).position.x/(Screen.width/2f)))
 					{
 						startRotate();
 					}
@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour {
         if (picked)
         {
             Vector3 pos = Input.GetTouch(touchId).position;
-            if (playerId == 1)
+            if (playerId == 0)
                     pos.x = Mathf.Min(pos.x, Screen.width / 2f);
                 else
                     pos.x = Mathf.Max(pos.x, Screen.width / 2f);   
@@ -105,9 +105,9 @@ public class PlayerMovement : MonoBehaviour {
 		if(rotate)
 		{
 			float tmpPos = Input.GetTouch(touchId).position.y;
-			if(playerId == (int)(Input.GetTouch(touchId).position.x/(Screen.width/2f))+1)
+			if(playerId == (int)(Input.GetTouch(touchId).position.x/(Screen.width/2f)))
 			{
-				if(playerId == 1)
+				if(playerId == 0)
 				{
 					if(mouseY < tmpPos)
 						angle = Mathf.Min(angle+rotationSpeed,45f);

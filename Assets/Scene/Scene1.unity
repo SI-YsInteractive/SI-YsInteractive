@@ -520,6 +520,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b806f504190fa46a5c8cf514ed2356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &595789331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 595789333}
+  - 114: {fileID: 595789332}
+  m_Layer: 0
+  m_Name: PlayerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &595789332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 595789331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3671b8e5d1edd8048b2462210c268909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 731765944}
+  - {fileID: 864126888}
+--- !u!4 &595789333
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 595789331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.75, y: 5.30000067, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &668404690
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotate: 0
   picked: 0
-  playerId: 1
+  playerId: 0
   touchId: -1
   rotationSpeed: 3
   minX: 0
@@ -665,10 +707,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 731765938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b98dce3514f6d1a43b69bd044ee67999, type: 3}
+  m_Script: {fileID: 11500000, guid: 02ec4c644f1331c4ebc26ac9c8fcca68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSkill: 1
+  startingLife: 0
+  playerNumber: 0
+  skills: []
+  currentSkill: {fileID: 0}
 --- !u!1 &805158367
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotate: 0
   picked: 0
-  playerId: 2
+  playerId: 1
   touchId: -1
   rotationSpeed: 3
   minX: 0
@@ -858,10 +903,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 864126886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b98dce3514f6d1a43b69bd044ee67999, type: 3}
+  m_Script: {fileID: 11500000, guid: 02ec4c644f1331c4ebc26ac9c8fcca68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSkill: 1
+  startingLife: 0
+  playerNumber: 0
+  skills: []
+  currentSkill: {fileID: 0}
 --- !u!23 &864126889
 MeshRenderer:
   m_ObjectHideFlags: 0
