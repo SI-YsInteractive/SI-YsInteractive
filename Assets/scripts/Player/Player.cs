@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
     //List of skills of the player.
     public List<Skill> skills;
 
+    public List<Protection> protections;
+
     //Return player's life.
     public float getLife() {
         return life;
@@ -22,8 +24,28 @@ public class Player : MonoBehaviour {
 
     /**Make the player take damage (after reducing the damages)*/
     public void takeDamage(DamageType dType, float damages) {
-        //TODO reduce damages by defences.
+        for(int i = protections.Count; i >= 0; i--) {
+            if (!protections[i].isDisabled()) {
+                damages = protections[i].reduce(damages, dType);
+            } else {
+                protections.RemoveAt(i);
+            }
+        }
         removeLife(damages);
+    }
+
+/*To use only if we need a simple way to make protections visually disappear simply.
+public void updateProtections() {
+        for(int i = protections.Count; i >= 0; i--) {
+            if(protections[i].isDisabled()) {
+                protections.RemoveAt(i);
+            }
+        }
+    }*/
+
+    /**Add a protection to the player*/
+    public void addProtection(Protection p) {
+        protections.Add(p);
     }
 
     /**Remove some part of player's life*/
