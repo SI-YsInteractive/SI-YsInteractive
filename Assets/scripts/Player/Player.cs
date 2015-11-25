@@ -74,12 +74,6 @@ public class Player : MonoBehaviour {
         life = startingLife;
     }
 
-    /**Get a random platform.*/
-    public plateform getRandomPlatform()
-    {
-        return plateforms[Random.Range(0, plateforms.Count)];
-    }
-
     // Update is called once per frame
     void Update() {
         //TODO: take the power from the angle and use it to determine the boost power (the "0" parameter).
