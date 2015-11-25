@@ -14,7 +14,7 @@ public abstract class Skill : MonoBehaviour{
     protected bool charging;
 
     //Current charge time in seconds.
-    protected float currentCharge;
+    public float currentCharge;
 
     protected abstract void action(Player player);
     
