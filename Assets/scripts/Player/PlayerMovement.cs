@@ -43,16 +43,16 @@ public class PlayerMovement : MonoBehaviour {
 					if(playerId == 0)
 					{
 						if(mouseY < tmpPos)
-							angle = Mathf.Min(angle+rotationSpeed,45f);
+							angle = Mathf.Min(angle+rotationSpeed,0f);
 						if(mouseY > tmpPos)
-							angle = Mathf.Max(angle-rotationSpeed,-45f);
+                            angle = Mathf.Max(angle - rotationSpeed, -90f);
 					}
 					else
 					{
 						if(mouseY > tmpPos)
-							angle = Mathf.Min(angle+rotationSpeed,45f);
+							angle = Mathf.Min(angle+rotationSpeed,0f);
 						if(mouseY < tmpPos)
-							angle = Mathf.Max(angle-rotationSpeed,-45f);
+                            angle = Mathf.Max(angle - rotationSpeed, -90f);
 					}
 					transform.eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.x,angle);
 				}
@@ -110,16 +110,16 @@ public class PlayerMovement : MonoBehaviour {
 				if(playerId == 0)
 				{
 					if(mouseY < tmpPos)
-						angle = Mathf.Min(angle+rotationSpeed,45f);
+						angle = Mathf.Min(angle+rotationSpeed,0f);
 					if(mouseY > tmpPos)
-						angle = Mathf.Max(angle-rotationSpeed,-45f);
+						angle = Mathf.Max(angle-rotationSpeed,-90f);
 				}
 				else
 				{
 					if(mouseY > tmpPos)
-						angle = Mathf.Min(angle+rotationSpeed,45f);
+						angle = Mathf.Min(angle+rotationSpeed,0f);
 					if(mouseY < tmpPos)
-						angle = Mathf.Max(angle-rotationSpeed,-45f);
+						angle = Mathf.Max(angle-rotationSpeed,-90f);
 				}
 				transform.eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.x,angle);
 			}
@@ -142,14 +142,6 @@ public class PlayerMovement : MonoBehaviour {
         try
         {
             touchId = Input.touchCount-1;
-			if(Input.touchCount == 0)
-                GameObject.FindGameObjectWithTag("Back").GetComponent<Image>().color = Color.white;
-            else if(touchId == 1)
-				GameObject.FindGameObjectWithTag("Back").GetComponent<Image>().color = Color.blue;
-            else
-                GameObject.FindGameObjectWithTag("Back").GetComponent<Image>().color = Color.red;
-
-
         }
         catch (ArgumentException e)
         {
@@ -169,12 +161,6 @@ public class PlayerMovement : MonoBehaviour {
 		touchId = -1;
         picked = false;
 		rotate = false;
-		if(Input.touchCount == 0)
-			GameObject.FindGameObjectWithTag("Back").GetComponent<Image>().color = Color.white;
-		else if(touchId == 1)
-			GameObject.FindGameObjectWithTag("Back").GetComponent<Image>().color = Color.blue;
-		else
-			GameObject.FindGameObjectWithTag("Back").GetComponent<Image>().color = Color.red;
 		GameObject otherPlayer = null;
 		foreach(GameObject pl in GameObject.FindGameObjectsWithTag("Player"))
 			if(pl.GetComponent<PlayerMovement>() != this)
