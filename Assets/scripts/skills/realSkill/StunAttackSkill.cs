@@ -9,6 +9,6 @@ public class StunAttackSkill : AttackSkill {
     protected override void action(Player player) {
         //We attack then we lock all skills.
         base.action(player);
-        PlayerManager.getInstance().sendlockAllSkills(PlayerManager.getInstance().getOtherPlayer(player), lockDuration);
+        PlayerManager.getInstance().sendLockAllSkills(PlayerManager.getInstance().getOtherPlayer(player), lockDuration);
     }
 }

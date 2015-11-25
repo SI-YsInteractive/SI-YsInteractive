@@ -60,6 +60,11 @@ public class PlayerManager : MonoBehaviour {
         target.slowAllSkills(slowDuration, slowPower);
     }
 
+    //Slow one's all skills.
+    public void sendLockAllSkills(Player target, float lockDuration) {
+        target.lockAllSkills(lockDuration);
+    }
+
     /**Get the other player that is not the one in the parameters.*/
     public Player getOtherPlayer(Player p) {
         if(p.playerNumber == 0) {

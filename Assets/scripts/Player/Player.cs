@@ -54,6 +54,11 @@ public class Player : MonoBehaviour {
             sk.slowSkill(slowDuration, slowPower);
         }
     }
+    public void lockAllSkills(float lockDuration) {
+        foreach (Skill sk in skills) {
+            sk.lockSkill(lockDuration);
+        }
+    }
 
     /*To use only if we need a simple way to make protections visually disappear simply.
     public void updateProtections() {
