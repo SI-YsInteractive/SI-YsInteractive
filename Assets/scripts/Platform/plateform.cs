@@ -13,7 +13,7 @@ public class plateform : MonoBehaviour {
 		case SkillType.ATTACK:
 			skill = gameObject.AddComponent<AttackSkill>();
 			AttackSkill tmpSkill = (AttackSkill)skill;
-			tmpSkill.lifeCost = 20f;
+	//		tmpSkill.lifeCost = 20f;
 			tmpSkill.chargeTime = 0f;
 			tmpSkill.boostedChargeMultiplier = 0f;
 			tmpSkill.damages = 0f;

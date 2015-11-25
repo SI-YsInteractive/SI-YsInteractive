@@ -3,7 +3,9 @@ using System.Collections;
 
 public class SkillManager : MonoBehaviour {
 
-    /**Drain time (->when not charging) = chargeTime * drainMultiplier;*/ 
+    /**The life cost of the skill per seconds. If negative, it becomes a life gain.*/
+    public float boostLifeCostPerSecond;
+    /**Drain time (->when not charging) = chargeTime * drainMultiplier;*/
     public float drainMultiplier;
 
     //Skill list.
