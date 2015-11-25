@@ -34,7 +34,6 @@ public abstract class ActivableSkill : Skill {
 
     public override void drainCharge(float passedTime) {
         //At least 0 to avoid negative charges.
-        //TODO récupérer le drainPower du SkillManager.
         currentCharge = Mathf.Max(currentCharge - (passedTime * SkillManager.getInstance().drainMultiplier), 0);
     }
 
