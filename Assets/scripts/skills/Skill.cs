@@ -5,8 +5,7 @@ using System.Collections;
     @Author Thomas Dubrulle Benjamin Lefevre*/
 public abstract class Skill : MonoBehaviour{
 
-    /**The life cost of the skill per . If negative, it becomes a mana gain.*/
-    public float lifeCost;
+
     /**The total charge time of the skill.*/
     public float chargeTime;
     /**The chargeMultiplier of the skill, if it is charged.*/

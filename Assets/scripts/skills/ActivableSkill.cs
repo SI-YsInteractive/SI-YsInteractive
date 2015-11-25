@@ -11,8 +11,8 @@ public abstract class ActivableSkill : Skill {
     * @param chargePower the charge power used to speed up the charge (0 = no boost; anything > 0 = boosted)*/
     public override void update(Player player, float passedTime, float chargePower) {
         if (!locked) {
-            player.removeLife(passedTime * chargePower);
-            currentCharge += (passedTime + (passedTime * chargePower * boostedChargeMultiplier * slowChargeMultiplier));
+            player.removeLife(passedTime * chargePower * SkillManager.getInstance().boostLifeCostPerSecond);
+            currentCharge += ((passedTime + (passedTime * chargePower * boostedChargeMultiplier)) * slowChargeMultiplier);
             if (currentCharge >= chargeTime) {
                 action(player);
                 currentCharge = 0;
