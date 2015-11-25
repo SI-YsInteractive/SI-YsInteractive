@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -9,20 +10,20 @@ public class Player : MonoBehaviour {
     public float startingLife;
     
     //Current life.
-    protected float life;
+    public float life;
     //The player number. It will be the index in the player manager.
     public int playerNumber;
 
     //List of skills of the player.
     public List<Skill> skills;
-    public Skill currentChargingSkill;
+    public Skill currentChargingSkill = null;
 
     public List<Protection> protections;
 
     //List of platform of the player.
-    public List<plateform> plateforms;
+    public GameObject[] plateforms;
 
-	public Skill currentSkill;
+	public GameObject healthBar;
 
     //Return player's life.
     public float getLife() {
@@ -31,13 +32,16 @@ public class Player : MonoBehaviour {
 
     /**Make the player take damage (after reducing the damages)*/
     public void takeDamage(DamageType dType, float damages) {
-        for(int i = protections.Count; i >= 0; i--) {
-            if (!protections[i].isDisabled()) {
-                damages = protections[i].reduce(damages, dType);
-            } else {
-                protections.RemoveAt(i);
-            }
-        }
+		if (protections.Count > 0) 
+		{
+			for (int i = protections.Count; i >= 0; i--) {
+				if (!protections [i].isDisabled ()) {
+					damages = protections [i].reduce (damages, dType);
+				} else {
+					protections.RemoveAt (i);
+				}
+			}
+		}
         removeLife(damages);
     }
 
@@ -62,6 +66,9 @@ public class Player : MonoBehaviour {
     /**Remove some part of player's life*/
     public void removeLife(float minus) {
         life = Mathf.Clamp(life - minus, 0, startingLife);
+		healthBar.GetComponent<RectTransform> ().localScale = new Vector3(1f,life / startingLife,1f);
+		if (life <= 0)
+			PlayerManager.instance.Win (PlayerManager.instance.getOtherPlayer (this));
     }
 
     /**Add some life to the player's life.*/
@@ -72,12 +79,17 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start() {
         life = startingLife;
+		GetComponent<PlayerMovement> ().playerId = playerNumber;
+		for (int i = 0; i<plateforms.Length; i++) {
+			skills.Add(plateforms[i].GetComponent<plateform>().skill);
+		}
     }
 
     // Update is called once per frame
     void Update() {
         //TODO: take the power from the angle and use it to determine the boost power (the "0" parameter).
-        currentChargingSkill.update(this, Time.deltaTime, 0);
+		if(currentChargingSkill)
+        	currentChargingSkill.update(this, Time.deltaTime, 0);
         foreach(Skill sk in skills) {
             //We check if the skill is locked or not. If it is, then we drain its charge anyway.
             if (sk != currentChargingSkill || sk.locked) {

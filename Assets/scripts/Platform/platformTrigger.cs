@@ -10,4 +10,11 @@ public class platformTrigger : MonoBehaviour {
 
 	}
 
+	void OnTriggerExit(Collider collision)
+	{
+		if (collision.tag == "Player")
+			transform.parent.gameObject.GetComponent<plateform> ().playerLeavePlatform (collision.gameObject);
+		
+	}
+
 }

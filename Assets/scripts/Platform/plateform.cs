@@ -4,7 +4,7 @@ using System.Collections;
 public class plateform : MonoBehaviour {
 
 	public SkillType skillType; 
-	private Skill skill;
+	public Skill skill;
 
 	void Awake()
 	{
@@ -34,8 +34,12 @@ public class plateform : MonoBehaviour {
 	}
 	public void setPlayerSkill(GameObject player)
 	{
-		//player.GetComponent<Player>().skill = skill;
-		//player.GetComponent<Player>().currentSkill = skillType;
+		player.GetComponent<Player>().currentChargingSkill = skill;
 	}
+	public void playerLeavePlatform(GameObject player)
+	{
+		player.GetComponent<Player>().currentChargingSkill = null;
+	}
+
 
 }

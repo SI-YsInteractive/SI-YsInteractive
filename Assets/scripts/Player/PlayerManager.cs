@@ -10,29 +10,44 @@ public class PlayerManager : MonoBehaviour {
     public Player[] players;
 
     //The public instance.
-    static private PlayerManager instance;
+    public static PlayerManager instance;
 
-
+	void Awake()
+	{
+		if (instance == null) {
+			instance = this;
+		}
+	}
 
     //Return the public instance of the manager.
-    static public PlayerManager getInstance() {
+	public static PlayerManager getInstance() {
         if (instance == null) {
-            instance = new PlayerManager();
+			instance = GameObject.FindObjectOfType(typeof(PlayerManager)) as PlayerManager;
+			
+			if (instance == null)
+			{
+				GameObject go = new GameObject("playerManager");
+				instance = go.AddComponent<PlayerManager>();
+			}
         }
         return instance;
     }
 
-    private PlayerManager() {
-        players = new Player[2];
-    }
+	void Start()
+	{
+		GameObject[] goPlayers = GameObject.FindGameObjectsWithTag ("Player");
+		players = new Player[2];
+		for(int i = 0;i< players.Length;i++) {
+			players[goPlayers[i].GetComponent<Player>().playerNumber] = goPlayers[i].GetComponent<Player>();
+		}
+
+	}
+
+
 
     /**Send damage to one player and then check for the victory of one of the players.*/
 	public void sendDamage(Player target, float dommages, DamageType dType) {
         target.takeDamage(dType, dommages);
-        if (target.getLife() < 0f)
-        {
-            Win(getOtherPlayer(target));
-        }
     }
 
     public void sendlockRandomSkill(Player target, float lockDuration) {
@@ -58,29 +73,11 @@ public class PlayerManager : MonoBehaviour {
     }
 
 
-    void Win(Player player)
+    public void Win(Player player)
     {
         DontDestroyOnLoad(player);
         Destroy(player.gameObject.GetComponent<PlayerMovement>());
         Application.LoadLevel("Win");
     }
 
-
-    [ContextMenu("Win player 1")]
-    public void Win()
-    {
-        Win(GameObject.FindGameObjectWithTag("Player").GetComponent<Player>());
-    }
-#if UNITY_EDITOR
-    void Update()
-    {
-        if (p1Win)
-            Win(GameObject.FindGameObjectWithTag("Player").GetComponent<Player>());
-    }
-#else
-    void Start()
-    {
-        Invoke("Win", 5f);
-    }
-#endif
 }
