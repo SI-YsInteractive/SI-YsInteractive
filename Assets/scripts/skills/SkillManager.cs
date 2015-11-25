@@ -3,10 +3,13 @@ using System.Collections;
 
 public class SkillManager : MonoBehaviour {
 
+    /**Drain time (->when not charging) = chargeTime * drainMultiplier;*/ 
+    public float drainMultiplier;
 
+    //Skill list.
 	[Header("Attack rapide")]
 	public float attackRapideDamage;
-	/*[Header("Attack puissante")]
+    /*[Header("Attack puissante")]
 	[Header("Bouclier basique")]
 	[Header("Bouclier fort")]
 	[Header("Boule de feu")]
@@ -22,8 +25,30 @@ public class SkillManager : MonoBehaviour {
 	[Header("Poison paralisant")]
 	[Header("Poison zone")]
 	[Header("Jet d'acide")]*/
-	// Use this for initialization
-	void Start () {
+
+    //The public instance.
+    public static SkillManager instance;
+
+    void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+    }
+    //Return the public instance of the manager.
+    public static SkillManager getInstance() {
+        if (instance == null) {
+            instance = GameObject.FindObjectOfType(typeof(SkillManager)) as SkillManager;
+
+            if (instance == null) {
+                GameObject go = new GameObject("skillManager");
+                instance = go.AddComponent<SkillManager>();
+            }
+        }
+        return instance;
+    }
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	

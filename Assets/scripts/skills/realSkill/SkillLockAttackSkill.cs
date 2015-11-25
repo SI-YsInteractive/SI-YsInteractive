@@ -5,7 +5,7 @@ using System.Collections;
 *A skill locked cannot be charged or activated, and it will be drained slowly (as if unmaintained) until the debuff wears off.*/
 public class SkillLockAttackSkill : AttackSkill {
 
-    public int lockDuration;
+    public float lockDuration;
 
     protected override void action(Player player) {
         //We attack then we lock the skill.

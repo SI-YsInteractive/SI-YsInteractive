@@ -31,5 +31,5 @@ public abstract class Protection : MonoBehaviour{
         timeLeft = startingTimeLeft;
     }
 
-    public abstract float reduce(float damage, DamageType dType);
+    public abstract float reduce(float damage, DamageType dType, Player player);
 }

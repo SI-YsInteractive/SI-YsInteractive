@@ -11,8 +11,6 @@ public abstract class Skill : MonoBehaviour{
     public float chargeTime;
     /**The chargeMultiplier of the skill, if it is charged.*/
     public float boostedChargeMultiplier;
-    /**The multiplier used to calculate how fast the charge is drained.*/
-    public float drainPower;
 
     //Current charge time in seconds.
     public float currentCharge;
@@ -23,7 +21,16 @@ public abstract class Skill : MonoBehaviour{
     public bool locked = false;
     //Current lock time. if <= 0 : not locked; otherwise locked.
     protected float lockTime = 0;
-    
+
+    /**********************************************************/
+
+    /**Tell if the skill is slowed*/
+    public bool slowed = false;
+    /**Slow time duration*/
+    protected float slowTime = 0;
+    /**Slow charge multiplier*/
+    protected float slowChargeMultiplier = 1;
+
     /**********************************************************/
 
     /*Make the action
@@ -44,5 +51,12 @@ public abstract class Skill : MonoBehaviour{
         lockTime = lockTime > lockDuration? lockTime : lockDuration;
         //Useful for the player to know whether the skill should be drained or not.
         locked = true;
+    }
+
+    /**Slow the skill charge speed for x time, making it slower to charge and activate.*/
+    public void slowSkill(float slowDuration, float slowPower) {
+        slowTime = slowDuration;
+        slowChargeMultiplier = Mathf.Min(slowPower, slowChargeMultiplier);
+        slowed = true;
     }
 }

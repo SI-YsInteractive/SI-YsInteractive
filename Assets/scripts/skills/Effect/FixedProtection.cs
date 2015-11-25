@@ -10,7 +10,7 @@ public class FixedProtection : Protection {
     public float standardAttackFixedProtection;
 
     /**Reduce damage by a percent.*/
-    public override float reduce(float damage, DamageType dType) {
+    public override float reduce(float damage, DamageType dType, Player player) {
         if (dType == DamageType.SPECIAL) {
             return damage - specialAttackFixedProtection;
         } else if (dType == DamageType.STANDARD) {
