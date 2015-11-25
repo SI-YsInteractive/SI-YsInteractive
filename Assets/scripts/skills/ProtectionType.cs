@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-public enum SkillType
+public enum ProtectionType
 {
-	AttaqueRapide,
-	AttaquePuissante,
-	BouclierBasique,
+	BouclierRapide,
+	BouclierPuissante,
+	ToileP,
 	BouclierFort,
 	BouleDeFeu,
 	LanceDeFoudre,

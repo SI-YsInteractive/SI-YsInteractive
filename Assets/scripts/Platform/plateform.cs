@@ -3,6 +3,7 @@ using System.Collections;
 
 public class plateform : MonoBehaviour {
 
+	public GameObject currentPlayer;
 	public SkillType skillType; 
 	public Skill skill;
 
@@ -10,16 +11,59 @@ public class plateform : MonoBehaviour {
 	{
 		switch (skillType) {
 
-		case SkillType.ATTACK:
+		case SkillType.AttaqueRapide:
 			skill = gameObject.AddComponent<AttackSkill>();
-			AttackSkill tmpSkill = (AttackSkill)skill;
-			tmpSkill.lifeCost = 20f;
-			tmpSkill.chargeTime = 0f;
-			tmpSkill.boostedChargeMultiplier = 0f;
-			tmpSkill.damages = 0f;
+			AttackSkill attackRapide = (AttackSkill)skill;
+			attackRapide.chargeTime = SkillManager.instance.attackRapideChargeTime;
+			attackRapide.damages = SkillManager.instance.attackRapideDamage;
+			attackRapide.dType = SkillManager.instance.attackRapideDamageType;
 			break;
-		case SkillType.DEFENSE:
+		case SkillType.AttaquePuissante:
+			skill = gameObject.AddComponent<AttackSkill>();
+			AttackSkill attackPuissante = (AttackSkill)skill;
+			attackPuissante.chargeTime = SkillManager.instance.attackPuissanteChargeTime;
+			attackPuissante.damages = SkillManager.instance.attackPuissanteDamage;
+			attackPuissante.dType = SkillManager.instance.attackPuissanteDamageType;
 			break;
+		case SkillType.BouclierBasique:
+			skill = gameObject.AddComponent<DefenseSkill>();
+			DefenseSkill bouclierBasique = (DefenseSkill)skill;
+			//bouclierBasique.chargeTime = SkillManager.instance.bouclierBasiqueChargeTime;
+			/*FixedProtection bouclierBasiqueProtection = new FixedProtection();
+			bouclierBasiqueProtection.specialAttackFixedProtection = SkillManager.instance.bouclierFortSpecialProtection;
+			bouclierBasiqueProtection.standardAttackFixedProtection = SkillManager.instance.bouclierFortStandardProtection;
+			bouclierBasique.protectionType = bouclierBasiqueProtection;
+			bouclierBasique.chargeTime = SkillManager.instance.bouclierBasiqueChargeTime;*/
+			break;
+		case SkillType.BouclierFort:
+			break;
+		case SkillType.BouleDeFeu:
+			break;
+		case SkillType.LanceDeFoudre:
+			break;
+		case SkillType.InterventionDivine:
+			break;
+		case SkillType.CoupDeGriffe:
+			break;
+		case SkillType.Morsure:
+			break;
+		case SkillType.Esquive:
+			break;
+		case SkillType.ContreAttaque:
+			break;
+		case SkillType.ModeChasse:
+			break;
+		case SkillType.CoupDeGrace:
+			break;
+		case SkillType.ToileProtectrice:
+			break;
+		case SkillType.PoisonParalisant:
+			break;
+		case SkillType.PoisonZone:
+			break;
+		case SkillType.JetAcide:
+			break;
+
 		}
 	}
 

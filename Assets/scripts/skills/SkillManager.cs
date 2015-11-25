@@ -5,26 +5,74 @@ public class SkillManager : MonoBehaviour {
 
     /**Drain time (->when not charging) = chargeTime * drainMultiplier;*/ 
     public float drainMultiplier;
+    public float LifeCostPerSecond;
+    public float BoostedChargeMultiplier;
 
     //Skill list.
 	[Header("Attack rapide")]
 	public float attackRapideDamage;
-    /*[Header("Attack puissante")]
+	public float attackRapideChargeTime;
+	public DamageType attackRapideDamageType;
+    [Header("Attack puissante")]
+	public float attackPuissanteDamage;
+	public float attackPuissanteChargeTime;
+	public DamageType attackPuissanteDamageType;
 	[Header("Bouclier basique")]
+	public float bouclierBasiqueChargeTime;
+	public float bouclierBasiqueStandardProtection;
+	public float bouclierBasiqueSpecialProtection;
 	[Header("Bouclier fort")]
+	public float bouclierFortChargeTime;
+	public float bouclierFortStandardProtection;
+	public float bouclierFortSpecialProtection;
 	[Header("Boule de feu")]
+	public float bouleDeFeuDamage;
+	public float bouleDeFeuChargeTime;
+	public DamageType bouleDeFeuDamageType;
 	[Header("Lance de foudre")]
+	public float lanceDeFoudreDamage;
+	public float lanceDeFoudreChargeTime;
+	public DamageType lanceDeFoudreDamageType;
 	[Header("Intervention divine")]
+	public float interventionDivineChargeTime;
 	[Header("Coup de griffe")]
-	[Header("Morsure")]
+	public float coupDeGriffeDamage;
+	public float coupDeGriffeChargeTime;
+	public DamageType coupDeGriffeDamageType;
+	//[Header("Morsure")]
 	[Header("Esquive")]
+	public float esquiveChargeTime;
+	public float esquiveStandardProtection;
+	public float esquiveSpecialProtection;
 	[Header("Contre attaque")]
+	public float contreAttaqueChargeTime;
+	public float contreAttaqueDamage;
+	public float contreAttaqueStandardProtection;
+	public float contreAttaqueSpecialProtection;
 	[Header("Mode chasse")]
+	public float modeChasseChargeTime;
+	public float modeChasseMultiplicateur;
 	[Header("Coup de grace")]
+	public float coupDeGraceDamage;
+	public float coupDeGraceChargeTime;
+	public DamageType coupDeGraceDamageType;
+	public DamageType coupDeGraceDamageMultiplier;
 	[Header("Toile protectrice")]
+	public float toileProtectriceChargeTime;
+	public float toileProtectriceStandardProtection;
+	public float toileProtectriceSpecialProtection;
+	public float toileProtectriceSlow;
 	[Header("Poison paralisant")]
+	public float poisonParalisantChargeTime;
+	public float poisonParalisantDuration;
 	[Header("Poison zone")]
-	[Header("Jet d'acide")]*/
+	public float poisonZoneDamage;
+	public float poisonZoneChargeTime;
+	public DamageType poisonZoneDamageType;
+	[Header("Jet d'acide")]
+	public float jetAcideChargeTime;
+	public float jetAcideDuration;
+	public float jetAcideDamageToProtection;
 
     //The public instance.
     public static SkillManager instance;
