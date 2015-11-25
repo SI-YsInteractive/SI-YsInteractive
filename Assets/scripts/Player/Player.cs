@@ -15,6 +15,9 @@ public class Player : MonoBehaviour {
     //List of skills of the player.
     public List<Skill> skills;
 
+    //List of platform of the player.
+    public List<plateform> plateforms;
+
 	public Skill currentSkill;
 
     //Return player's life.
@@ -41,6 +44,12 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start() {
         life = startingLife;
+    }
+
+    /**Get a random platform.*/
+    public plateform getRandomPlatform()
+    {
+        return plateforms[Random.Range(0, plateforms.Count)];
     }
 
     // Update is called once per frame
