@@ -36,7 +36,7 @@ public class Player : MonoBehaviour {
 		{
 			for (int i = protections.Count; i >= 0; i--) {
 				if (!protections [i].isDisabled ()) {
-					damages = protections [i].reduce (damages, dType);
+					damages = protections [i].reduce (damages, dType, this);
 				} else {
 					protections.RemoveAt (i);
 				}
@@ -47,6 +47,12 @@ public class Player : MonoBehaviour {
 
     public void lockRandomSkill(float lockDuration) {
         skills[UnityEngine.Random.Range(0, skills.Count)].lockSkill(lockDuration);
+    }
+
+    public void slowAllSkills(float slowDuration, float slowPower) {
+        foreach (Skill sk in skills) {
+            sk.slowSkill(slowDuration, slowPower);
+        }
     }
 
     /*To use only if we need a simple way to make protections visually disappear simply.

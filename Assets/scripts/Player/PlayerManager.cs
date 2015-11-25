@@ -50,8 +50,14 @@ public class PlayerManager : MonoBehaviour {
         target.takeDamage(dType, dommages);
     }
 
+    //Lock one's random skill.
     public void sendlockRandomSkill(Player target, float lockDuration) {
         target.lockRandomSkill(lockDuration);
+    }
+
+    //Slow one's all skills.
+    public void sendSlowAllSkills(Player target, float slowDuration, float slowPower) {
+        target.slowAllSkills(slowDuration, slowPower);
     }
 
     /**Get the other player that is not the one in the parameters.*/
