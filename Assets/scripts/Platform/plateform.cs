@@ -28,12 +28,12 @@ public class plateform : MonoBehaviour {
 		case SkillType.BouclierBasique:
 			skill = gameObject.AddComponent<DefenseSkill>();
 			DefenseSkill bouclierBasique = (DefenseSkill)skill;
-			//bouclierBasique.chargeTime = SkillManager.instance.bouclierBasiqueChargeTime;
-			/*FixedProtection bouclierBasiqueProtection = new FixedProtection();
+			bouclierBasique.chargeTime = SkillManager.instance.bouclierBasiqueChargeTime;
+			FixedProtection bouclierBasiqueProtection = new FixedProtection();
 			bouclierBasiqueProtection.specialAttackFixedProtection = SkillManager.instance.bouclierFortSpecialProtection;
 			bouclierBasiqueProtection.standardAttackFixedProtection = SkillManager.instance.bouclierFortStandardProtection;
 			bouclierBasique.protectionType = bouclierBasiqueProtection;
-			bouclierBasique.chargeTime = SkillManager.instance.bouclierBasiqueChargeTime;*/
+			bouclierBasique.chargeTime = SkillManager.instance.bouclierBasiqueChargeTime;
 			break;
 		case SkillType.BouclierFort:
 			break;
