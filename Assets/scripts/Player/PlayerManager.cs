@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class PlayerManager : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class PlayerManager : MonoBehaviour {
 
     //The public instance.
     static private PlayerManager instance;
+
+
 
     //Return the public instance of the manager.
     static public PlayerManager getInstance() {
@@ -30,6 +33,10 @@ public class PlayerManager : MonoBehaviour {
         {
             Win(getOtherPlayer(target));
         }
+    }
+
+    public void sendlockRandomSkill(Player target, float lockDuration) {
+        target.lockRandomSkill(lockDuration);
     }
 
     /**Get the other player that is not the one in the parameters.*/

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Player : MonoBehaviour {
 
@@ -14,6 +15,9 @@ public class Player : MonoBehaviour {
 
     //List of skills of the player.
     public List<Skill> skills;
+    public Skill currentChargingSkill;
+
+    public List<Protection> protections;
 
     //List of platform of the player.
     public List<plateform> plateforms;
@@ -27,8 +31,32 @@ public class Player : MonoBehaviour {
 
     /**Make the player take damage (after reducing the damages)*/
     public void takeDamage(DamageType dType, float damages) {
-        //TODO reduce damages by defences.
+        for(int i = protections.Count; i >= 0; i--) {
+            if (!protections[i].isDisabled()) {
+                damages = protections[i].reduce(damages, dType);
+            } else {
+                protections.RemoveAt(i);
+            }
+        }
         removeLife(damages);
+    }
+
+    public void lockRandomSkill(float lockDuration) {
+        skills[UnityEngine.Random.Range(0, skills.Count)].lockSkill(lockDuration);
+    }
+
+    /*To use only if we need a simple way to make protections visually disappear simply.
+    public void updateProtections() {
+            for(int i = protections.Count; i >= 0; i--) {
+                if(protections[i].isDisabled()) {
+                    protections.RemoveAt(i);
+                }
+            }
+        }*/
+
+    /**Add a protection to the player*/
+    public void addProtection(Protection p) {
+        protections.Add(p);
     }
 
     /**Remove some part of player's life*/
@@ -54,8 +82,13 @@ public class Player : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        //TODO: take the power from the angle and use it to determine the boost power (the "0" parameter).
+        currentChargingSkill.update(this, Time.deltaTime, 0);
         foreach(Skill sk in skills) {
-            sk.update(this, Time.deltaTime, 1);
+            //We check if the skill is locked or not. If it is, then we drain its charge anyway.
+            if (sk != currentChargingSkill || sk.locked) {
+                sk.drainCharge(Time.deltaTime);
+            }
         }
     }
 }
