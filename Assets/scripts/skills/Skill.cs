@@ -9,7 +9,7 @@ public abstract class Skill : MonoBehaviour{
     /**The total charge time of the skill.*/
     public float chargeTime;
     /**The chargeMultiplier of the skill, if it is charged.*/
-    public float boostedChargeMultiplier;
+    public float boostedChargeMultiplier = SkillManager.instance.BoostedChargeMultiplier;
 
     //Current charge time in seconds.
     public float currentCharge;

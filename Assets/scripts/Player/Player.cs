@@ -18,7 +18,8 @@ public class Player : MonoBehaviour {
     public List<Skill> skills;
     public Skill currentChargingSkill = null;
 
-    public List<Protection> protections;
+    public List<Protection> protections = new List<Protection>();
+	public int protectionNumber;
 
     //List of platform of the player.
     public GameObject[] plateforms;
@@ -60,14 +61,15 @@ public class Player : MonoBehaviour {
         }
     }
 
-    /*To use only if we need a simple way to make protections visually disappear simply.
+    //To use only if we need a simple way to make protections visually disappear simply.
     public void updateProtections() {
             for(int i = protections.Count; i >= 0; i--) {
+				protections[i].protectionUpdate();
                 if(protections[i].isDisabled()) {
                     protections.RemoveAt(i);
                 }
             }
-        }*/
+        }
 
     /**Add a protection to the player*/
     public void addProtection(Protection p) {
@@ -98,6 +100,7 @@ public class Player : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+		protectionNumber = protections.Count;
         if (currentChargingSkill) {
             //TODO optimize
             //The angle is between 360 and 270 (360 = minimum boost, 270 = maximum).
@@ -110,7 +113,7 @@ public class Player : MonoBehaviour {
         }
         foreach(Skill sk in skills) {
             //We check if the skill is locked or not. If it is, then we drain its charge anyway.
-            if (sk != currentChargingSkill || sk.locked) {
+            if ((currentChargingSkill && sk != currentChargingSkill)|| sk.locked) {
                 sk.drainCharge(Time.deltaTime);
             }
         }

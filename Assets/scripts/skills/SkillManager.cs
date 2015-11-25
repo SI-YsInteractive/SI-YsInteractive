@@ -2,6 +2,28 @@
 using System.Collections;
 
 public class SkillManager : MonoBehaviour {
+	public static SkillManager instance = null;
+	
+	void Awake()
+	{
+		if (instance == null) {
+			instance = this;
+		}
+	}
+	
+	//Return the public instance of the manager.
+	public static SkillManager getInstance() {
+		if (instance == null) {
+			instance = GameObject.FindObjectOfType(typeof(SkillManager)) as SkillManager;
+			
+			if (instance == null)
+			{
+				GameObject go = new GameObject("SkillManager");
+				instance = go.AddComponent<SkillManager>();
+			}
+		}
+		return instance;
+	}
 
     /**The life cost of the skill per seconds. If negative, it becomes a life gain.*/
     public float boostLifeCostPerSecond;
@@ -77,25 +99,7 @@ public class SkillManager : MonoBehaviour {
 	public float jetAcideDamageToProtection;
 
     //The public instance.
-    public static SkillManager instance;
 
-    void Awake() {
-        if (instance == null) {
-            instance = this;
-        }
-    }
-    //Return the public instance of the manager.
-    public static SkillManager getInstance() {
-        if (instance == null) {
-            instance = GameObject.FindObjectOfType(typeof(SkillManager)) as SkillManager;
-
-            if (instance == null) {
-                GameObject go = new GameObject("skillManager");
-                instance = go.AddComponent<SkillManager>();
-            }
-        }
-        return instance;
-    }
 
     // Use this for initialization
     void Start () {
