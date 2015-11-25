@@ -4,7 +4,7 @@ using System.Collections;
 public class BleedAttackSkill : AttackSkill {
 
     //Damage per ticks.
-    public int DamagePerTick;
+    public float DamagePerTick;
     //The number of ticks the damage will be applied.
     public int numberOfTicks;
     //The time between each tick.

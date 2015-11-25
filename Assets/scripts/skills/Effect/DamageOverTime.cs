@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DamageOverTime : MonoBehaviour {
 
-	public int DamagePerTick;
+	public float DamagePerTick;
 	public int numberOfTicks;
 	public float timeBetweenTick;
 	// Use this for initialization

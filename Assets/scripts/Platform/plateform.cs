@@ -30,32 +30,99 @@ public class plateform : MonoBehaviour {
 			DefenseSkill bouclierBasique = (DefenseSkill)skill;
 			bouclierBasique.chargeTime = SkillManager.instance.bouclierBasiqueChargeTime;
 			FixedProtection bouclierBasiqueProtection = new FixedProtection();
-			bouclierBasiqueProtection.specialAttackFixedProtection = SkillManager.instance.bouclierFortSpecialProtection;
-			bouclierBasiqueProtection.standardAttackFixedProtection = SkillManager.instance.bouclierFortStandardProtection;
+			bouclierBasiqueProtection.specialAttackFixedProtection = SkillManager.instance.bouclierBasiqueSpecialProtection;
+			bouclierBasiqueProtection.standardAttackFixedProtection = SkillManager.instance.bouclierBasiqueStandardProtection;
+            bouclierBasiqueProtection.startingTimeLeft = SkillManager.instance.bouclierBasiqueProtectionDuration;
 			bouclierBasique.protectionType = bouclierBasiqueProtection;
 			bouclierBasique.chargeTime = SkillManager.instance.bouclierBasiqueChargeTime;
 			break;
 		case SkillType.BouclierFort:
+            skill = gameObject.AddComponent<DefenseSkill>();
+			DefenseSkill bouclierFort = (DefenseSkill)skill;
+            bouclierFort.chargeTime = SkillManager.instance.bouclierFortChargeTime;
+			FixedProtection bouclierFortProtection = new FixedProtection();
+            bouclierFortProtection.specialAttackFixedProtection = SkillManager.instance.bouclierFortSpecialProtection;
+            bouclierFortProtection.standardAttackFixedProtection = SkillManager.instance.bouclierFortStandardProtection;
+            bouclierFortProtection.startingTimeLeft = SkillManager.instance.bouclierFortProtectionDuration;
+            bouclierFort.protectionType = bouclierFortProtection;
+            bouclierFort.chargeTime = SkillManager.instance.bouclierFortChargeTime;
 			break;
 		case SkillType.BouleDeFeu:
+            skill = gameObject.AddComponent<AttackSkill>();
+			AttackSkill bouleDeFeu = (AttackSkill)skill;
+            bouleDeFeu.chargeTime = SkillManager.instance.bouleDeFeuChargeTime;
+            bouleDeFeu.damages = SkillManager.instance.bouleDeFeuDamage;
+            bouleDeFeu.dType = SkillManager.instance.bouleDeFeuDamageType;
 			break;
 		case SkillType.LanceDeFoudre:
+            skill = gameObject.AddComponent<StunAttackSkill>();
+            StunAttackSkill lanceDeFoudre = (StunAttackSkill)skill;
+            lanceDeFoudre.random = true;
+            lanceDeFoudre.chargeTime = SkillManager.instance.lanceDeFoudreChargeTime;
+            lanceDeFoudre.damages = SkillManager.instance.lanceDeFoudreDamage;
+            lanceDeFoudre.dType = SkillManager.instance.lanceDeFoudreDamageType;
 			break;
-		case SkillType.InterventionDivine:
-			break;
+        case SkillType.EclairDeGlace:
+            skill = gameObject.AddComponent<SlowAttackSkill>();
+            SlowAttackSkill eclairDeGlace = (SlowAttackSkill)skill;
+            eclairDeGlace.chargeTime = SkillManager.instance.eclairDeGlaceChargeTime;
+            eclairDeGlace.damages = SkillManager.instance.eclairDeGlaceDamage;
+            eclairDeGlace.dType = SkillManager.instance.eclairDeGlaceDamageType;
+            eclairDeGlace.slowDuration = SkillManager.instance.eclairDeGlaceSlowDuration;
+            eclairDeGlace.slowPowerMultiplier = SkillManager.instance.eclairDeGlaceSlowMultiplier;
+            break;
+		/*case SkillType.InterventionDivine:
+			break;*/
 		case SkillType.CoupDeGriffe:
+
+            skill = gameObject.AddComponent<BleedAttackSkill>();
+            BleedAttackSkill coupDeGriffe = (BleedAttackSkill)skill;
+            coupDeGriffe.DamagePerTick = SkillManager.instance.coupDeGriffeDamagePerTick;
+            coupDeGriffe.numberOfTicks = SkillManager.instance.coupDeGriffeNumberOfTicks;
+            coupDeGriffe.timeBetweenTick = SkillManager.instance.coupDeGriffeTimeBetweenTicks;
+            coupDeGriffe.chargeTime = SkillManager.instance.coupDeGriffeChargeTime;
+            coupDeGriffe.damages = SkillManager.instance.coupDeGriffeDamage;
+            coupDeGriffe.dType = SkillManager.instance.coupDeGriffeDamageType;
 			break;
-		case SkillType.Morsure:
-			break;
+		/*case SkillType.Morsure:
+			break;*/
 		case SkillType.Esquive:
+            skill = gameObject.AddComponent<DefenseSkill>();
+			DefenseSkill esquive = (DefenseSkill)skill;
+            esquive.chargeTime = SkillManager.instance.esquiveChargeTime;
+			FixedProtection esquiveProtection = new FixedProtection();
+            esquiveProtection.specialAttackFixedProtection = SkillManager.instance.esquiveSpecialProtection;
+            esquiveProtection.standardAttackFixedProtection = SkillManager.instance.esquiveStandardProtection;
+            esquiveProtection.startingTimeLeft = SkillManager.instance.esquiveProtectionDuration;
+            esquive.protectionType = esquiveProtection;
+            esquive.chargeTime = SkillManager.instance.esquiveChargeTime;
 			break;
 		case SkillType.ContreAttaque:
+            skill = gameObject.AddComponent<DefenseSkill>();
+			DefenseSkill contreAttaque = (DefenseSkill)skill;
+            contreAttaque.chargeTime = SkillManager.instance.contreAttaqueChargeTime;
+            CounterAttackFixedProtection contreAttackProtection = new CounterAttackFixedProtection();
+            contreAttackProtection.specialAttackFixedProtection = SkillManager.instance.contreAttaqueSpecialProtection;
+            contreAttackProtection.standardAttackFixedProtection = SkillManager.instance.contreAttaqueStandardProtection;
+            contreAttackProtection.startingTimeLeft = SkillManager.instance.contreAttaqueProtectionDuration;
+            contreAttackProtection.damages = SkillManager.instance.contreAttaqueDamage;
+            contreAttaque.protectionType = contreAttackProtection;
+            contreAttaque.chargeTime = SkillManager.instance.contreAttaqueChargeTime;
 			break;
 		case SkillType.ModeChasse:
 			break;
 		case SkillType.CoupDeGrace:
 			break;
 		case SkillType.ToileProtectrice:
+            skill = gameObject.AddComponent<DefenseSkill>();
+			DefenseSkill toileProtectrice = (DefenseSkill)skill;
+            toileProtectrice.chargeTime = SkillManager.instance.toileProtectriceChargeTime;
+            SlowingWebProtection toileProtectriceProtection = new SlowingWebProtection();
+            toileProtectriceProtection.specialAttackFixedProtection = SkillManager.instance.toileProtectriceSpecialProtection;
+            toileProtectriceProtection.standardAttackFixedProtection = SkillManager.instance.toileProtectriceStandardProtection;
+            toileProtectriceProtection.startingTimeLeft = SkillManager.instance.toileProtectriceProtectionDuration;
+            toileProtectrice.protectionType = toileProtectriceProtection;
+            toileProtectrice.chargeTime = SkillManager.instance.toileProtectriceChargeTime;
 			break;
 		case SkillType.PoisonParalisant:
 			break;

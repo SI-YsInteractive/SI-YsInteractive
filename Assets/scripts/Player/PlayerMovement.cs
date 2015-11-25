@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             touchId = Input.touchCount-1;
         }
-        catch (ArgumentException e)
+        catch (ArgumentException)
         {
             return;
         }
