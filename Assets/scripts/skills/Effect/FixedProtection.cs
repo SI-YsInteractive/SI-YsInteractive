@@ -12,9 +12,9 @@ public class FixedProtection : Protection {
     /**Reduce damage by a percent.*/
     public override float reduce(float damage, DamageType dType, Player player) {
         if (dType == DamageType.SPECIAL) {
-            return damage - specialAttackFixedProtection;
+            return Mathf.Max(damage - specialAttackFixedProtection,0f);
         } else if (dType == DamageType.STANDARD) {
-            return damage - standardAttackFixedProtection;
+			return Mathf.Max(damage - standardAttackFixedProtection,0f);
         } else {
             return damage;
         }
