@@ -105,10 +105,10 @@ public class plateform : MonoBehaviour {
             contreAttaque.protectionType = ProtectionType.ContreAttaque;
             contreAttaque.chargeTime = SkillManager.instance.contreAttaqueChargeTime;
 			break;
-		case SkillType.ModeChasse:
+		/*case SkillType.ModeChasse:
 			break;
 		case SkillType.CoupDeGrace:
-			break;
+			break;*/
 		case SkillType.ToileProtectrice:
             skill = gameObject.AddComponent<DefenseSkill>();
 			DefenseSkill toileProtectrice = (DefenseSkill)skill;
@@ -120,11 +120,17 @@ public class plateform : MonoBehaviour {
             toileProtectrice.chargeTime = SkillManager.instance.toileProtectriceChargeTime;
 			break;
 		case SkillType.PoisonParalisant:
+			skill = gameObject.AddComponent<StunAttackSkill>();
+			StunAttackSkill poisonParalisant = (StunAttackSkill)skill;
+			poisonParalisant.chargeTime = SkillManager.instance.coupDeGriffeChargeTime;
+			poisonParalisant.damages = SkillManager.instance.coupDeGriffeDamage;
+			poisonParalisant.dType = SkillManager.instance.coupDeGriffeDamageType;
+			poisonParalisant.random = false;
 			break;
-		case SkillType.PoisonZone:
+		/*case SkillType.PoisonZone:
 			break;
 		case SkillType.JetAcide:
-			break;
+			break;*/
 
 		}
 	}

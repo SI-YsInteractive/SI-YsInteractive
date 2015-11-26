@@ -113,7 +113,7 @@ public class Player : MonoBehaviour {
         }
         foreach(Skill sk in skills) {
             //We check if the skill is locked or not. If it is, then we drain its charge anyway.
-            if ((currentChargingSkill && sk != currentChargingSkill)|| sk.locked) {
+            if ((sk != currentChargingSkill)|| sk.locked) {
                 sk.drainCharge(Time.deltaTime);
             }
         }
