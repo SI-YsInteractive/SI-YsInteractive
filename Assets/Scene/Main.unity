@@ -1773,8 +1773,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlledCamera: {fileID: 274211049}
   dureeMaxTremblement: 20
-  forceTremblementX: 7
-  forceTremblementY: 7
+  forceTremblementX: 1
+  forceTremblementY: 1
 --- !u!1001 &1322899665
 Prefab:
   m_ObjectHideFlags: 0
