@@ -59,6 +59,7 @@ public class SkillManager : MonoBehaviour {
 	public float lanceDeFoudreDamage;
 	public float lanceDeFoudreChargeTime;
 	public DamageType lanceDeFoudreDamageType;
+	public float lanceDeFoudreDuration;
     [Header("Eclair de glace")]
     public float eclairDeGlaceDamage;
     public float eclairDeGlaceChargeTime;
@@ -116,7 +117,7 @@ public class SkillManager : MonoBehaviour {
 	public float jetAcideDuration;
 	public float jetAcideDamageToProtection;
 
-    //The public instance.
+	public Sprite[] sprites;
 
 
     // Use this for initialization

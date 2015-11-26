@@ -60,6 +60,7 @@ public class plateform : MonoBehaviour {
             lanceDeFoudre.chargeTime = SkillManager.instance.lanceDeFoudreChargeTime;
             lanceDeFoudre.damages = SkillManager.instance.lanceDeFoudreDamage;
             lanceDeFoudre.dType = SkillManager.instance.lanceDeFoudreDamageType;
+            lanceDeFoudre.lockDuration = SkillManager.instance.lanceDeFoudreDuration;
 			break;
         case SkillType.EclairDeGlace:
             skill = gameObject.AddComponent<SlowAttackSkill>();
