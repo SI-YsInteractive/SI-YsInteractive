@@ -6,8 +6,6 @@ public abstract class Protection : MonoBehaviour{
     public bool disableByHit;
     public bool disableByTime;
 
-    /**The starting number of hits before the protection wears off*/
-    public int startingHitLeft;
     /**The starting time before the protection wears off*/
     public float startingTimeLeft = 1f;
 
@@ -17,14 +15,11 @@ public abstract class Protection : MonoBehaviour{
     protected float timeLeft;
 
 	void Start() {
-		hitLeft = startingHitLeft;
 		timeLeft = startingTimeLeft;
 	}
 
 
-    public bool isDisabled() {
-        return (disableByTime && timeLeft <= 0) || (hitLeft <= 0 && disableByHit);
-    }
+
 
     void Update() {
         timeLeft -= Time.deltaTime;
