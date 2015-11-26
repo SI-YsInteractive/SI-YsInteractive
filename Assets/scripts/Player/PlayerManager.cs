@@ -86,7 +86,7 @@ public class PlayerManager : MonoBehaviour {
 
     public void Win(Player player)
     {
-        DontDestroyOnLoad(player);
+        DontDestroyOnLoad(player.gameObject);
         Destroy(player.gameObject.GetComponent<PlayerMovement>());
         Application.LoadLevel("Win");
     }

@@ -96,7 +96,7 @@ public class Player : MonoBehaviour {
         life = startingLife;
 		GetComponent<PlayerMovement> ().playerId = playerNumber;
 		for (int i = 0; i<plateforms.Length; i++) {
-			plateforms[i].GetComponent<plateform>().skillType = (SkillType)PlayerPrefs.GetInt("Player" + (playerNumber+1) + "Skill" + (i+1));
+			//plateforms[i].GetComponent<plateform>().skillType = (SkillType)PlayerPrefs.GetInt("Player" + (playerNumber+1) + "Skill" + (i+1));
 			skills.Add(plateforms[i].GetComponent<plateform>().skill);
 		}
     }
