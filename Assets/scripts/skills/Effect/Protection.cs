@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Protection{
+public abstract class Protection : MonoBehaviour{
 
     public bool disableByHit;
     public bool disableByTime;
@@ -9,14 +9,14 @@ public abstract class Protection{
     /**The starting number of hits before the protection wears off*/
     public int startingHitLeft;
     /**The starting time before the protection wears off*/
-    public float startingTimeLeft;
+    public float startingTimeLeft = 1f;
 
     /**The number of hits left before the protection wears off.*/
     protected int hitLeft;
     /**The time left before the protection wears off.*/
     protected float timeLeft;
 
-	public Protection() {
+	void Start() {
 		hitLeft = startingHitLeft;
 		timeLeft = startingTimeLeft;
 	}
@@ -26,8 +26,14 @@ public abstract class Protection{
         return (disableByTime && timeLeft <= 0) || (hitLeft <= 0 && disableByHit);
     }
 
-    public void protectionUpdate() {
-        if(disableByTime) timeLeft -= Time.deltaTime;
+    void Update() {
+        timeLeft -= Time.deltaTime;
+        if (timeLeft <= 0)
+        {
+            GetComponent<Player>().protections.Remove(this);
+            Destroy(this);
+
+        }
     }
 
 

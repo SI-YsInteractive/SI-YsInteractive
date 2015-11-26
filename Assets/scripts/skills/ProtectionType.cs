@@ -3,21 +3,9 @@ using System.Collections;
 
 public enum ProtectionType
 {
-	BouclierRapide,
-	BouclierPuissante,
-	ToileP,
+	BouclierBasique,
 	BouclierFort,
-	BouleDeFeu,
-	LanceDeFoudre,
-	InterventionDivine,
-	CoupDeGriffe,
-	Morsure,
-	Esquive,
-	ContreAttaque,
-	ModeChasse,
-	CoupDeGrace,
-	ToileProtectrice,
-	PoisonParalisant,
-	PoisonZone,
-	JetAcide,
+    ToileProtectrice,
+    Esquive,
+    ContreAttaque,
 }

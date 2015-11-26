@@ -62,14 +62,14 @@ public class Player : MonoBehaviour {
     }
 
     //To use only if we need a simple way to make protections visually disappear simply.
-    public void updateProtections() {
+    /*public void updateProtections() {
             for(int i = protections.Count; i >= 0; i--) {
 				protections[i].protectionUpdate();
                 if(protections[i].isDisabled()) {
                     protections.RemoveAt(i);
                 }
             }
-        }
+        }*/
 
     /**Add a protection to the player*/
     public void addProtection(Protection p) {

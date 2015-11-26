@@ -327,38 +327,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 11479520, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
-      propertyPath: drainMultiplier
-      value: .75
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479520, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
-      propertyPath: bouclierBasiqueChargeTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479520, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
-      propertyPath: bouclierBasiqueStandardProtection
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479520, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
-      propertyPath: bouclierBasiqueSpecialProtection
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479520, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
-      propertyPath: attackRapideDamage
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479520, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
-      propertyPath: attackRapideChargeTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479520, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
-      propertyPath: attackPuissanteDamage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479520, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
-      propertyPath: attackPuissanteChargeTime
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
   m_IsPrefabParent: 0
@@ -781,6 +749,14 @@ Prefab:
     - target: {fileID: 11465540, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: skillType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11492118, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+      propertyPath: skillType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476836, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+      propertyPath: skillType
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
