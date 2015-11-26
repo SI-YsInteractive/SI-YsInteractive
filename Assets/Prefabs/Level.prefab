@@ -1648,6 +1648,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24054b7717cae0e439dff620edc14850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 2100000, guid: 3c2ecb19f2680a34d9109083098067c6, type: 2}
+  defense: {fileID: 2100000, guid: c4f9d7abc0008e24fb89ef44119dd2ac, type: 2}
+  special: {fileID: 2100000, guid: 3e2285d25f9377b49b877fdd532afcea, type: 2}
   currentPlayer: {fileID: 0}
   skillType: 0
   skill: {fileID: 0}
@@ -1665,6 +1668,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24054b7717cae0e439dff620edc14850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 2100000, guid: 3c2ecb19f2680a34d9109083098067c6, type: 2}
+  defense: {fileID: 2100000, guid: c4f9d7abc0008e24fb89ef44119dd2ac, type: 2}
+  special: {fileID: 2100000, guid: 3e2285d25f9377b49b877fdd532afcea, type: 2}
   currentPlayer: {fileID: 0}
   skillType: 0
   skill: {fileID: 0}
@@ -1704,6 +1710,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24054b7717cae0e439dff620edc14850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 2100000, guid: 3c2ecb19f2680a34d9109083098067c6, type: 2}
+  defense: {fileID: 2100000, guid: c4f9d7abc0008e24fb89ef44119dd2ac, type: 2}
+  special: {fileID: 2100000, guid: 3e2285d25f9377b49b877fdd532afcea, type: 2}
   currentPlayer: {fileID: 0}
   skillType: 0
   skill: {fileID: 0}
@@ -1721,6 +1730,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24054b7717cae0e439dff620edc14850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 2100000, guid: 3c2ecb19f2680a34d9109083098067c6, type: 2}
+  defense: {fileID: 2100000, guid: c4f9d7abc0008e24fb89ef44119dd2ac, type: 2}
+  special: {fileID: 2100000, guid: 3e2285d25f9377b49b877fdd532afcea, type: 2}
   currentPlayer: {fileID: 0}
   skillType: 0
   skill: {fileID: 0}
@@ -1782,6 +1794,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24054b7717cae0e439dff620edc14850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 2100000, guid: 3c2ecb19f2680a34d9109083098067c6, type: 2}
+  defense: {fileID: 2100000, guid: c4f9d7abc0008e24fb89ef44119dd2ac, type: 2}
+  special: {fileID: 2100000, guid: 3e2285d25f9377b49b877fdd532afcea, type: 2}
   currentPlayer: {fileID: 0}
   skillType: 0
   skill: {fileID: 0}
@@ -1799,6 +1814,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24054b7717cae0e439dff620edc14850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 2100000, guid: 3c2ecb19f2680a34d9109083098067c6, type: 2}
+  defense: {fileID: 2100000, guid: c4f9d7abc0008e24fb89ef44119dd2ac, type: 2}
+  special: {fileID: 2100000, guid: 3e2285d25f9377b49b877fdd532afcea, type: 2}
   currentPlayer: {fileID: 0}
   skillType: 12
   skill: {fileID: 0}
@@ -1816,6 +1834,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24054b7717cae0e439dff620edc14850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 2100000, guid: 3c2ecb19f2680a34d9109083098067c6, type: 2}
+  defense: {fileID: 2100000, guid: c4f9d7abc0008e24fb89ef44119dd2ac, type: 2}
+  special: {fileID: 2100000, guid: 3e2285d25f9377b49b877fdd532afcea, type: 2}
   currentPlayer: {fileID: 0}
   skillType: 0
   skill: {fileID: 0}
@@ -1844,6 +1865,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24054b7717cae0e439dff620edc14850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 2100000, guid: 3c2ecb19f2680a34d9109083098067c6, type: 2}
+  defense: {fileID: 2100000, guid: c4f9d7abc0008e24fb89ef44119dd2ac, type: 2}
+  special: {fileID: 2100000, guid: 3e2285d25f9377b49b877fdd532afcea, type: 2}
   currentPlayer: {fileID: 0}
   skillType: 0
   skill: {fileID: 0}
@@ -1861,6 +1885,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24054b7717cae0e439dff620edc14850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 2100000, guid: 3c2ecb19f2680a34d9109083098067c6, type: 2}
+  defense: {fileID: 2100000, guid: c4f9d7abc0008e24fb89ef44119dd2ac, type: 2}
+  special: {fileID: 2100000, guid: 3e2285d25f9377b49b877fdd532afcea, type: 2}
   currentPlayer: {fileID: 0}
   skillType: 0
   skill: {fileID: 0}
@@ -1900,6 +1927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24054b7717cae0e439dff620edc14850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 2100000, guid: 3c2ecb19f2680a34d9109083098067c6, type: 2}
+  defense: {fileID: 2100000, guid: c4f9d7abc0008e24fb89ef44119dd2ac, type: 2}
+  special: {fileID: 2100000, guid: 3e2285d25f9377b49b877fdd532afcea, type: 2}
   currentPlayer: {fileID: 0}
   skillType: 0
   skill: {fileID: 0}
