@@ -35,12 +35,8 @@ public class Player : MonoBehaviour {
     public void takeDamage(DamageType dType, float damages) {
 		if (protections.Count > 0) 
 		{
-			for (int i = protections.Count; i >= 0; i--) {
-				if (!protections [i].isDisabled ()) {
-					damages = protections [i].reduce (damages, dType, this);
-				} else {
-					protections.RemoveAt (i);
-				}
+			foreach (Protection protect in protections) {
+				damages = protect.reduce (damages, dType, this);
 			}
 		}
         removeLife(damages);
