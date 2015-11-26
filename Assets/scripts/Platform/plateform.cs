@@ -7,9 +7,13 @@ public class plateform : MonoBehaviour {
 	public SkillType skillType; 
 	public Skill skill;
     public GameObject ChargeBar;
+    public int playerId;
+    public int skillId;
 
 	void Awake()
 	{
+		string name = "Player" + playerId + "Skill" + skillId;
+		skillType = (SkillType)PlayerPrefs.GetInt (name);
 		switch (skillType) {
 
 		case SkillType.AttaqueRapide:

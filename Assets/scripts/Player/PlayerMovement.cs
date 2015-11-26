@@ -29,8 +29,9 @@ public class PlayerMovement : MonoBehaviour {
                 pos.x = Mathf.Min(pos.x, Screen.width / 2f);
             else
                 pos.x = Mathf.Max(pos.x, Screen.width / 2f);   
-            pos.z = 15;
+            pos.z = 14;
             pos = Camera.main.ScreenToWorldPoint(pos);
+			pos.z = 59.3f;
             transform.position = pos;
         }
 		else
@@ -97,8 +98,9 @@ public class PlayerMovement : MonoBehaviour {
                     pos.x = Mathf.Min(pos.x, Screen.width / 2f);
                 else
                     pos.x = Mathf.Max(pos.x, Screen.width / 2f);   
-            pos.z = 10;
+			pos.z = 14;
             pos = Camera.main.ScreenToWorldPoint(pos);
+			pos.z = 59.3f;
 
             transform.position = pos;
         }
