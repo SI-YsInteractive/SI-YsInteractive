@@ -659,15 +659,15 @@ Prefab:
     - target: {fileID: 11440562, guid: 0bf575ffcf6c6a547800e777997566c4, type: 2}
       propertyPath: plateforms.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1703852639}
     - target: {fileID: 11440562, guid: 0bf575ffcf6c6a547800e777997566c4, type: 2}
       propertyPath: plateforms.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1703852636}
     - target: {fileID: 11440562, guid: 0bf575ffcf6c6a547800e777997566c4, type: 2}
       propertyPath: plateforms.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1703852638}
     - target: {fileID: 11440562, guid: 0bf575ffcf6c6a547800e777997566c4, type: 2}
       propertyPath: m_Enabled
       value: 1
@@ -732,15 +732,15 @@ Prefab:
       objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 11465540, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: skillType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11492118, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: skillType
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11476836, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: skillType
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11470726, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: m_Enabled
@@ -773,6 +773,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1703852636 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 125794, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+  m_PrefabInternal: {fileID: 1703852635}
+--- !u!1 &1703852637 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 124728, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+  m_PrefabInternal: {fileID: 1703852635}
+--- !u!1 &1703852638 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 192600, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+  m_PrefabInternal: {fileID: 1703852635}
+--- !u!1 &1703852639 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 193382, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+  m_PrefabInternal: {fileID: 1703852635}
+--- !u!1 &1703852640 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 142080, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+  m_PrefabInternal: {fileID: 1703852635}
+--- !u!1 &1703852641 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165914, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+  m_PrefabInternal: {fileID: 1703852635}
+--- !u!1 &1703852642 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 199770, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+  m_PrefabInternal: {fileID: 1703852635}
 --- !u!1 &1712166583 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 137338, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
@@ -982,19 +1010,19 @@ Prefab:
     - target: {fileID: 11433272, guid: 44c54e215953dd84fa388897a35a7e76, type: 2}
       propertyPath: plateforms.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1703852637}
     - target: {fileID: 11433272, guid: 44c54e215953dd84fa388897a35a7e76, type: 2}
       propertyPath: plateforms.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1703852640}
     - target: {fileID: 11433272, guid: 44c54e215953dd84fa388897a35a7e76, type: 2}
       propertyPath: plateforms.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1703852642}
     - target: {fileID: 11433272, guid: 44c54e215953dd84fa388897a35a7e76, type: 2}
       propertyPath: plateforms.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1703852641}
     - target: {fileID: 11433272, guid: 44c54e215953dd84fa388897a35a7e76, type: 2}
       propertyPath: startingLife
       value: 100
