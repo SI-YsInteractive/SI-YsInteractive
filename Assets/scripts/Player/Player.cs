@@ -44,6 +44,8 @@ public class Player : MonoBehaviour {
 			}
 		}
         removeLife(damages);
+        //ScreenShake
+        ScreenShakeManager.getInstance().AddCameraShake(1);
     }
 
     public void lockRandomSkill(float lockDuration) {
