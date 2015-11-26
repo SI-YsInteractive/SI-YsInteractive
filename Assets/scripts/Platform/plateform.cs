@@ -107,9 +107,15 @@ public class plateform : MonoBehaviour {
             contreAttaque.chargeTime = SkillManager.instance.contreAttaqueChargeTime;
 			break;
 		/*case SkillType.ModeChasse:
-			break;
-		case SkillType.CoupDeGrace:
 			break;*/
+		case SkillType.CoupDeGrace:
+			skill = gameObject.AddComponent<CriticalAttackSkill>();
+			CriticalAttackSkill coupDeGrace = (CriticalAttackSkill)skill;
+			coupDeGrace.criticalDamage = SkillManager.instance.coupDeGraceCriticalDamage;
+			coupDeGrace.chargeTime = SkillManager.instance.coupDeGraceChargeTime;
+			coupDeGrace.damages = SkillManager.instance.coupDeGraceDamage;
+			coupDeGrace.dType = SkillManager.instance.coupDeGraceDamageType;
+			break;
 		case SkillType.ToileProtectrice:
             skill = gameObject.AddComponent<DefenseSkill>();
 			DefenseSkill toileProtectrice = (DefenseSkill)skill;
@@ -123,9 +129,10 @@ public class plateform : MonoBehaviour {
 		case SkillType.PoisonParalisant:
 			skill = gameObject.AddComponent<StunAttackSkill>();
 			StunAttackSkill poisonParalisant = (StunAttackSkill)skill;
-			poisonParalisant.chargeTime = SkillManager.instance.coupDeGriffeChargeTime;
-			poisonParalisant.damages = SkillManager.instance.coupDeGriffeDamage;
-			poisonParalisant.dType = SkillManager.instance.coupDeGriffeDamageType;
+			poisonParalisant.chargeTime = SkillManager.instance.poisonParalisantChargeTime;
+			poisonParalisant.damages = SkillManager.instance.poisonParalisantDamage;
+			poisonParalisant.dType = SkillManager.instance.poisonParalisantDamageType;
+			poisonParalisant.lockDuration = SkillManager.instance.poisonParalisantDuration;
 			poisonParalisant.random = false;
 			break;
 		/*case SkillType.PoisonZone:

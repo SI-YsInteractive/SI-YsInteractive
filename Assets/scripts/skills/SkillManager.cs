@@ -94,7 +94,7 @@ public class SkillManager : MonoBehaviour {
 	public float coupDeGraceDamage;
 	public float coupDeGraceChargeTime;
 	public DamageType coupDeGraceDamageType;
-    public float coupDeGraceDamageMultiplier;
+    public float coupDeGraceCriticalDamage;
 	[Header("Toile protectrice")]
 	public float toileProtectriceChargeTime;
 	public float toileProtectriceStandardProtection;
@@ -104,6 +104,8 @@ public class SkillManager : MonoBehaviour {
     public float toileProtectriceSlowDuration;
 	[Header("Poison paralisant")]
 	public float poisonParalisantChargeTime;
+	public float poisonParalisantDamage;
+	public DamageType poisonParalisantDamageType;
 	public float poisonParalisantDuration;
 	[Header("Poison zone")]
 	public float poisonZoneDamage;

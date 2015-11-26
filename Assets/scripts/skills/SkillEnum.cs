@@ -17,7 +17,7 @@ public enum SkillType
 	Esquive,
 	ContreAttaque,
 	//ModeChasse,
-	//CoupDeGrace,
+	CoupDeGrace,
 	ToileProtectrice,
 	PoisonParalisant,
 	//PoisonZone,
