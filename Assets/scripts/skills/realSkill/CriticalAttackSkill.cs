@@ -8,7 +8,6 @@ public class CriticalAttackSkill : AttackSkill {
 	protected override void action(Player player) {
 		//We attack then we lock the skill.
 		Player other = PlayerManager.getInstance ().getOtherPlayer (player);
-		bool stun = false;
 		foreach (Skill skill in other.skills) 
 		{
 			if(skill.slowed || skill.locked)
