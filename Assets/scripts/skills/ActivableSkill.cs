@@ -12,7 +12,7 @@ public abstract class ActivableSkill : Skill {
     public override void update(Player player, float passedTime, float chargePower) {
         if (!locked) {
             player.removeLife(passedTime * chargePower * SkillManager.getInstance().boostLifeCostPerSecond);
-            currentCharge += ((passedTime + (passedTime * chargePower * boostedChargeMultiplier)) * slowChargeMultiplier);
+            currentCharge += ((passedTime + (passedTime * chargePower * SkillManager.getInstance().BoostedChargeMultiplier)) * slowChargeMultiplier);
             if (currentCharge >= chargeTime) {
                 action(player);
                 currentCharge = 0;
@@ -34,7 +34,6 @@ public abstract class ActivableSkill : Skill {
 
     public override void drainCharge(float passedTime) {
         //At least 0 to avoid negative charges.
-		Debug.Log(SkillManager.instance.drainMultiplier);
         currentCharge = Mathf.Max(currentCharge - (passedTime * SkillManager.instance.drainMultiplier), 0);
     }
 
