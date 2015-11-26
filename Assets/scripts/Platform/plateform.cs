@@ -3,6 +3,10 @@ using System.Collections;
 
 public class plateform : MonoBehaviour {
 
+	public Material attack;
+	public Material defense;
+	public Material special;
+
 	public GameObject currentPlayer;
 	public SkillType skillType; 
 	public Skill skill;

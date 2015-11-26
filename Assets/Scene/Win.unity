@@ -85,6 +85,11 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!224 &385673744 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 22455808, guid: c8967821e205f4a46abb9c39106b6ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1566875218}
 --- !u!1 &835209493
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,10 +159,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 835209493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -2.63271737, z: -236.944565}
+  m_LocalScale: {x: 2.63271737, y: 2.63271737, z: 2.63271737}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 385673744}
   m_RootOrder: 2
 --- !u!1 &1550351661
 GameObject:
@@ -282,7 +287,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22455808, guid: c8967821e205f4a46abb9c39106b6ab8, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 22455808, guid: c8967821e205f4a46abb9c39106b6ab8, type: 2}
       propertyPath: m_AnchoredPosition.x

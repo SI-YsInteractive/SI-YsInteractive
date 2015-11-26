@@ -63,6 +63,8 @@ public class PlayerMovement : MonoBehaviour {
 
 
         #else
+		if(rotationSpeed == 0f)
+			GetComponent<MeshRenderer>().material.color = Color.green;
         if (Input.touchCount > 0 && touchId == -1)
         {
             for (int i = 0; i < Input.touchCount; ++i)
@@ -104,6 +106,7 @@ public class PlayerMovement : MonoBehaviour {
 
             transform.position = pos;
         }
+
 		if(rotate)
 		{
 			float tmpPos = Input.GetTouch(touchId).position.y;
@@ -154,7 +157,6 @@ public class PlayerMovement : MonoBehaviour {
 	void startRotate()
 	{
 		touchId = Input.touchCount-1;
-		GameObject.FindGameObjectWithTag("Back").GetComponent<Image>().color = Color.green;
 		rotate = true;
 	}
 

@@ -39,12 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1701e22d7af8ae4fa73226d50f29c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boostLifeCostPerSecond: 0
+  boostLifeCostPerSecond: 3
   drainMultiplier: .75
   LifeCostPerSecond: 0
-  BoostedChargeMultiplier: 0
-  attackRapideDamage: 5
-  attackRapideChargeTime: 5
+  BoostedChargeMultiplier: 5
+  attackRapideDamage: 1.35000002
+  attackRapideChargeTime: 10
   attackRapideDamageType: 0
   attackPuissanteDamage: 10
   attackPuissanteChargeTime: 10
@@ -53,16 +53,17 @@ MonoBehaviour:
   bouclierBasiqueStandardProtection: 20
   bouclierBasiqueSpecialProtection: 20
   bouclierBasiqueProtectionDuration: 5
-  bouclierFortChargeTime: 0
-  bouclierFortStandardProtection: 0
-  bouclierFortSpecialProtection: 0
-  bouclierFortProtectionDuration: 0
+  bouclierFortChargeTime: 5
+  bouclierFortStandardProtection: 100
+  bouclierFortSpecialProtection: 100
+  bouclierFortProtectionDuration: 5.44000006
   bouleDeFeuDamage: 20
   bouleDeFeuChargeTime: 5
   bouleDeFeuDamageType: 1
   lanceDeFoudreDamage: 20
   lanceDeFoudreChargeTime: 5
   lanceDeFoudreDamageType: 1
+  lanceDeFoudreDuration: 0
   eclairDeGlaceDamage: 0
   eclairDeGlaceChargeTime: 0
   eclairDeGlaceDamageType: 0
@@ -90,21 +91,24 @@ MonoBehaviour:
   coupDeGraceDamage: 0
   coupDeGraceChargeTime: 0
   coupDeGraceDamageType: 0
-  coupDeGraceDamageMultiplier: 0
+  coupDeGraceCriticalDamage: 0
   toileProtectriceChargeTime: 0
   toileProtectriceStandardProtection: 0
   toileProtectriceSpecialProtection: 0
   toileProtectriceProtectionDuration: 0
   toileProtectriceSlowMultiplier: 0
   toileProtectriceSlowDuration: 0
-  poisonParalisantChargeTime: 0
-  poisonParalisantDuration: 0
+  poisonParalisantChargeTime: 2.16000009
+  poisonParalisantDamage: .00999999978
+  poisonParalisantDamageType: 0
+  poisonParalisantDuration: 7.8499999
   poisonZoneDamage: 0
   poisonZoneChargeTime: 0
   poisonZoneDamageType: 0
   jetAcideChargeTime: 0
   jetAcideDuration: 0
   jetAcideDamageToProtection: 0
+  sprites: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

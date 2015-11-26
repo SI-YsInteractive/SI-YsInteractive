@@ -28,6 +28,11 @@ public class SoundManager : MonoBehaviour {
 
     /**Play a sound*/
     public void playSound(AudioClip audioClip, float volume) {
-        audioSource.PlayOneShot(audioClip, volume);
+		GameObject sound = new GameObject ();
+		sound.AddComponent<AudioSource> ();
+		sound.GetComponent<AudioSource> ().clip = audioClip;
+		sound.GetComponent<AudioSource> ().volume = volume;
+		sound.GetComponent<AudioSource> ().Play();
+		Destroy (sound, audioClip.length);
     }
 }

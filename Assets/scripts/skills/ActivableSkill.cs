@@ -18,7 +18,8 @@ public abstract class ActivableSkill : Skill {
             currentCharge += ((passedTime + (passedTime * chargePower * SkillManager.getInstance().BoostedChargeMultiplier)) * slowChargeMultiplier);
             if (currentCharge >= chargeTime) {
                 action(player);
-                SoundManager.getInstance().playSound(soundOnActivation, soundVolume);
+				if(soundOnActivation)
+                	SoundManager.getInstance().playSound(soundOnActivation, soundVolume);
                 currentCharge = 0;
             }
         } else {
