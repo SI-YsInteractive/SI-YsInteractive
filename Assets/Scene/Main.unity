@@ -568,6 +568,10 @@ Prefab:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1068246162}
+    - target: {fileID: 11440562, guid: 0bf575ffcf6c6a547800e777997566c4, type: 2}
+      propertyPath: model
+      value: 
+      objectReference: {fileID: 1383289067}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0bf575ffcf6c6a547800e777997566c4, type: 2}
   m_IsPrefabParent: 0
@@ -634,6 +638,10 @@ Prefab:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 289548511}
+    - target: {fileID: 11433272, guid: 44c54e215953dd84fa388897a35a7e76, type: 2}
+      propertyPath: model
+      value: 
+      objectReference: {fileID: 112387612}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44c54e215953dd84fa388897a35a7e76, type: 2}
   m_IsPrefabParent: 0
