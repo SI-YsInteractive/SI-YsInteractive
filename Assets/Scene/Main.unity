@@ -203,43 +203,43 @@ Prefab:
       objectReference: {fileID: 1686297764}
     - target: {fileID: 471168, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -.600000024
       objectReference: {fileID: 0}
     - target: {fileID: 420104, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -.600000024
       objectReference: {fileID: 0}
     - target: {fileID: 403632, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -.600000024
       objectReference: {fileID: 0}
     - target: {fileID: 443124, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -.600000024
       objectReference: {fileID: 0}
     - target: {fileID: 448030, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -.600000024
       objectReference: {fileID: 0}
     - target: {fileID: 479662, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -.600000024
       objectReference: {fileID: 0}
     - target: {fileID: 402420, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -.600000024
       objectReference: {fileID: 0}
     - target: {fileID: 447650, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -.600000024
       objectReference: {fileID: 0}
     - target: {fileID: 491250, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -.600000024
       objectReference: {fileID: 0}
     - target: {fileID: 418454, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -.5
+      value: -.600000024
       objectReference: {fileID: 0}
     - target: {fileID: 11492118, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
       propertyPath: stun
@@ -1310,6 +1310,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11479520, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
       propertyPath: boostLifeCostPerSecond
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11479520, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
+      propertyPath: poisonParalisantDamageType
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -5,7 +5,9 @@ using System.Collections;
 public class skillPanelPosition : MonoBehaviour {
 	public int skillNumber;
 	public float length;
+	public SkillType skill;
 	public Text text;
+	public Text description;
 	// Use this for initialization
 	void Start () {
 		length = Screen.width / 5f;
@@ -14,5 +16,6 @@ public class skillPanelPosition : MonoBehaviour {
 		GetComponent<RectTransform> ().sizeDelta = new Vector2(length,length);
 		GetComponent<RectTransform> ().anchoredPosition = new Vector3(length*skillNumber,GetComponent<RectTransform> ().anchoredPosition.y);
 		text = transform.GetChild (1).GetComponent<Text> ();
+		description = transform.GetChild (2).GetComponent<Text> ();
 	}
 }

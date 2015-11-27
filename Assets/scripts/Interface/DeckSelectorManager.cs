@@ -33,7 +33,51 @@ public class DeckSelectorManager : MonoBehaviour {
 		skills [currentSkill].GetComponent<skillPanelPosition> ().text.text = skill.ToString ();
 		currentSkill++;
 		PlayerPrefs.SetInt ("Player" + playerId + "Skill" + currentSkill,(int)skill);
-
+		string description = "";
+		switch (skill)
+		{
+		case SkillType.AttaqueRapide:
+			description = "inflige 4 point de dégats, charge en 2 secondes";
+			break;
+		case SkillType.AttaquePuissante:
+			description = "inflige 18 point de dégats, charge en 7 secondes";
+			break;
+		case SkillType.BouclierBasique:
+			description = "protège de 3 point de dégats, charge en 1 secondes, dure 5 secondes";
+			break;
+		case SkillType.BouclierFort:
+			description = "protège de 12 point de dégats, charge en 4 secondes, dure 8 secondes";
+			break;
+		case SkillType.BouleDeFeu:
+			description = "inflige 6 point de dégats, charge en 6 secondes, passe au travers des protections";
+			break;
+		case SkillType.LanceDeFoudre:
+			description = "inflige 3 point de dégats et bloque une compétence aléatoire pendant 2 secondes, charge en 6 secondes, passe au travers des protections";
+			break;
+		case SkillType.EclairDeGlace:
+			description = "inflige 1.5 point de dégats, charge en 6 secondes, ralenti l'adversaire de 50% pendant 6 seconde, passe au travers des protections";
+			break;
+		case SkillType.CoupDeGriffe:
+			description = "inflige 2 point de dégats, plus 5 sur 10 secondes, charge en 2 secondes";
+			break;
+		case SkillType.Esquive:
+			description = "esquive les attaques physiques pendant 2 seconde, charge en 3 secondes";
+			break;
+		case SkillType.ContreAttaque:
+			description = "protège de 1 point de dégat et en renvoie 3 pendant 2 seconde, charge en 1 secondes";
+			break;
+		case SkillType.CoupDeGrace:
+			description = "inflige 3 points de dégat, ou 6 sur un ennemi ralenti, ou sonné, charge en 2 secondes";
+			break;
+		case SkillType.ToileProtectrice:
+			description = "protège de 3 point de dégats, ralenti de 50% pendant 3 secondes l'adversaire si il attaque, dure 6 secondes, charge en 3 secondes";
+			break;
+		case SkillType.PoisonParalysant:
+			description = "sonne l'adversaire pendant 6 secondes, charge en 6 secondes";
+			break;
+		}
+		skills [currentSkill-1].GetComponent<skillPanelPosition> ().description.text = description;
+		skills [currentSkill-1].GetComponent<skillPanelPosition> ().skill = skill;
 		if(currentSkill == 5)
 		{
 		 	if(Application.loadedLevelName == "DeckSelection1")
@@ -41,6 +85,24 @@ public class DeckSelectorManager : MonoBehaviour {
 			else
 				Application.LoadLevel("Main");
 		}
+	}
+
+	public void back()
+	{
+		GameObject lastSlot = transform.GetChild (0).GetChild (0).GetChild (currentSkill - 1).gameObject;
+		SkillType last = lastSlot.GetComponent<skillPanelPosition> ().skill;
+		for(int i = 0;i<skillList.Length;i++)
+		{
+			if(skillList[i] == last)
+			{
+				selectionPanel.transform.GetChild(i).GetComponent<Button>().interactable = true;
+				lastSlot.GetComponent<skillPanelPosition> ().text.text = "";
+				lastSlot.GetComponent<skillPanelPosition> ().description.text = "";
+				currentSkill--;
+				return;
+			}
+		}
+
 	}
 
 	void buildChoices(SkillType[] skillList)
