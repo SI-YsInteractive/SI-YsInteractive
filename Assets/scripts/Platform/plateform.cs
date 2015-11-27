@@ -162,6 +162,7 @@ public class plateform : MonoBehaviour {
 			break;*/
 
 		}
+        transform.GetChild(2).GetComponent<SpriteRenderer>().sprite = SkillManager.instance.sprites[(int)skillType];
 	}
 
 	
