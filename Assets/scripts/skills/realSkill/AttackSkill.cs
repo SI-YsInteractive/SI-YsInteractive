@@ -19,7 +19,10 @@ public class AttackSkill : ActivableSkill{
 
     public void launchAttack()
     {
+		if (sound == null)
+			sound = SkillManager.instance.swordAttack;
         PlayerManager.getInstance().sendDamage(PlayerManager.getInstance().getOtherPlayer(p), damages, dType);
         p.playAnimationAttack();
+		SoundManager.instance.playSound(sound,1f);
     }
 }

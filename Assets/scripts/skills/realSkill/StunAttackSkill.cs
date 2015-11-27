@@ -10,6 +10,10 @@ public class StunAttackSkill : AttackSkill {
 
     protected override void action(Player player) {
         //We attack then we lock all skills.
+		if (random)
+			sound = SkillManager.instance.foudre;
+		else
+			sound = SkillManager.instance.poison;
         base.action(player);
         if(random)
             PlayerManager.getInstance().sendlockRandomSkill(PlayerManager.getInstance().getOtherPlayer(player), lockDuration);

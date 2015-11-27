@@ -119,9 +119,9 @@ public class Player : MonoBehaviour {
         if (boostBar) {
             boostBar.GetComponent<RectTransform>().localScale = new Vector3(1f, Mathf.Max(0.10f,boost), 1f);
             boostBar.GetComponent<Image>().color = new Color(255f, 1-(boost*0.75f), 0);
-        } else {
+        } /*else {
             Debug.LogError("No boost bar for player" + playerNumber);
-        }
+        }*/
         if (currentChargingSkill) {
             currentChargingSkill.update(this, Time.deltaTime, boost);
         }

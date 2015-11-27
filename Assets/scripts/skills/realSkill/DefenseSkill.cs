@@ -33,6 +33,7 @@ public class DefenseSkill : ActivableSkill {
                 bouclierFort.specialAttackFixedProtection = specialAttackFixedProtection;
                 bouclierFort.standardAttackFixedProtection = standardAttackFixedProtection;
                 protection = bouclierFort;
+				sound = SkillManager.instance.shield;
                 break;
             case ProtectionType.ToileProtectrice:
                 SlowingWebProtection toileProtectrice = player.gameObject.AddComponent<SlowingWebProtection>();
@@ -42,6 +43,7 @@ public class DefenseSkill : ActivableSkill {
                 toileProtectrice.slowDuration = slowDuration;
                 toileProtectrice.slowPowerMultiplier = slowPowerMultiplier;
                 protection = toileProtectrice;
+				sound = SkillManager.instance.toile;
                 break;
             case ProtectionType.ContreAttaque:
                 CounterAttackFixedProtection contreAttaque = player.gameObject.AddComponent<CounterAttackFixedProtection>();
@@ -50,6 +52,7 @@ public class DefenseSkill : ActivableSkill {
                 contreAttaque.standardAttackFixedProtection = standardAttackFixedProtection;
                 contreAttaque.damages = damages;
                 protection = contreAttaque;
+				sound = SkillManager.instance.shield;
                 break;
             default:
                 Debug.Log("La protection n'a pas fonctionné cf DefenseSkill");
@@ -59,6 +62,7 @@ public class DefenseSkill : ActivableSkill {
         }
         player.addProtection(protection);
         player.playDefenseAnimation();
+		SoundManager.instance.playSound (sound, 1f);
     }
 
 

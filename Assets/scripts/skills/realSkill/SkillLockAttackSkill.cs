@@ -9,6 +9,7 @@ public class SkillLockAttackSkill : AttackSkill {
 
     protected override void action(Player player) {
         //We attack then we lock the skill.
+		sound = SkillManager.instance.foudre;
         base.action(player);
         PlayerManager.getInstance().sendlockRandomSkill(PlayerManager.getInstance().getOtherPlayer(player), lockDuration);
     }

@@ -7,6 +7,7 @@ public class CriticalAttackSkill : AttackSkill {
 	
 	protected override void action(Player player) {
 		//We attack then we lock the skill.
+		base.action(player);
 		Player other = PlayerManager.getInstance ().getOtherPlayer (player);
 		foreach (Skill skill in other.skills) 
 		{
@@ -14,11 +15,10 @@ public class CriticalAttackSkill : AttackSkill {
 				continue;
 			else
 			{
-				PlayerManager.getInstance().sendDamage(other, damages, dType);
 				return;
 			}
 
 		}
-		PlayerManager.getInstance().sendDamage(other, criticalDamage, dType);
+		PlayerManager.getInstance().sendDamage(other, criticalDamage-damages, dType);
 	}
 }

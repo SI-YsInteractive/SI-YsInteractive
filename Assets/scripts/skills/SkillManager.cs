@@ -104,6 +104,21 @@ public class SkillManager : MonoBehaviour {
 
 	public Sprite[] sprites;
 
+	[Header("Sounds")]
+	public AudioClip swordAttack;
+	public float swordAttackVolume;
+	public AudioClip shield;
+	public float shieldVolume;
+	public AudioClip foudre;
+	public float foudreVolume;
+	public AudioClip glace;
+	public float glaceVolume;
+	public AudioClip toile;
+	public float toileVolume;
+	public AudioClip poison;
+	public float poisonVolume;
+
+
 
     // Use this for initialization
     void Start () {

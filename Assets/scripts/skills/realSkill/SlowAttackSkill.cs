@@ -11,6 +11,7 @@ public class SlowAttackSkill : AttackSkill {
 
     protected override void action(Player player) {
         //We attack then we lock all skills.
+		sound = SkillManager.instance.glace;
         base.action(player);
         PlayerManager.getInstance().sendSlowAllSkills(PlayerManager.getInstance().getOtherPlayer(player), slowDuration, slowPowerMultiplier);
     }

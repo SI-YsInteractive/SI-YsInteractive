@@ -5,6 +5,7 @@ using System.Collections;
     @Author Thomas Dubrulle Benjamin Lefevre*/
 public abstract class Skill : MonoBehaviour{
 
+	public AudioClip sound = null;
 
     /**The total charge time of the skill.*/
     public float chargeTime;
