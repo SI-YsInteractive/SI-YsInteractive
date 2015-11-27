@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 8300000, guid: 3e193d3864d317245b4569774a84a030, type: 3}
   fight: {fileID: 8300000, guid: 0ad45432e98aa1349a9ea7e8a71fc242, type: 3}
-  win: {fileID: 8300000, guid: 31f23eff57b42c64c96e386b83a6be36, type: 3}
+  win: {fileID: 8300000, guid: 7c7be39e298796f40900591652c3e00f, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

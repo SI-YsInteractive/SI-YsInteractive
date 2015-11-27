@@ -406,6 +406,51 @@ Prefab:
       propertyPath: backButton
       value: 
       objectReference: {fileID: 1898139339}
+    - target: {fileID: 11427426, guid: f1698cf129df95d4db3ef49ab057daa4, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f8071baa33f2b9040abe00525fbb5857,
+        type: 3}
+    - target: {fileID: 11413778, guid: f1698cf129df95d4db3ef49ab057daa4, type: 2}
+      propertyPath: m_Color.a
+      value: .90196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476162, guid: f1698cf129df95d4db3ef49ab057daa4, type: 2}
+      propertyPath: m_Color.a
+      value: .90196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491986, guid: f1698cf129df95d4db3ef49ab057daa4, type: 2}
+      propertyPath: m_Color.a
+      value: .90196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 11450200, guid: f1698cf129df95d4db3ef49ab057daa4, type: 2}
+      propertyPath: m_Color.a
+      value: .90196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473934, guid: f1698cf129df95d4db3ef49ab057daa4, type: 2}
+      propertyPath: m_Color.a
+      value: .90196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 11471838, guid: f1698cf129df95d4db3ef49ab057daa4, type: 2}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443140, guid: f1698cf129df95d4db3ef49ab057daa4, type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443140, guid: f1698cf129df95d4db3ef49ab057daa4, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443140, guid: f1698cf129df95d4db3ef49ab057daa4, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443140, guid: f1698cf129df95d4db3ef49ab057daa4, type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1698cf129df95d4db3ef49ab057daa4, type: 2}
   m_IsPrefabParent: 0

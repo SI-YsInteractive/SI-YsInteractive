@@ -333,6 +333,27 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1550351665}
+    - target: {fileID: 11489076, guid: c8967821e205f4a46abb9c39106b6ab8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f8071baa33f2b9040abe00525fbb5857,
+        type: 3}
+    - target: {fileID: 11409170, guid: c8967821e205f4a46abb9c39106b6ab8, type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409170, guid: c8967821e205f4a46abb9c39106b6ab8, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409170, guid: c8967821e205f4a46abb9c39106b6ab8, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409170, guid: c8967821e205f4a46abb9c39106b6ab8, type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8967821e205f4a46abb9c39106b6ab8, type: 2}
   m_IsPrefabParent: 0

@@ -17,12 +17,13 @@ public class ambiantMusic : MonoBehaviour {
 	void OnLevelWasLoaded(int level) {
 		if (level == 3)
 		{
+			Debug.Log("level main");
 			GetComponent<AudioSource>().Stop();
 			GetComponent<AudioSource>().clip = fight;
 			GetComponent<AudioSource>().Play();
 
 		}
-		if (level == 4)
+		else if (level == 4)
 		{
 			GetComponent<AudioSource>().Stop();
 			GetComponent<AudioSource>().clip = win;
