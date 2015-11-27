@@ -118,7 +118,7 @@ public class Player : MonoBehaviour {
         if (boost <= 0.15f) boost = 0;
         if (boostBar) {
             boostBar.GetComponent<RectTransform>().localScale = new Vector3(1f, Mathf.Max(0.10f,boost), 1f);
-
+            boostBar.GetComponent<Image>().color = new Color(255f, 1-(boost*0.75f), 0);
         } else {
             Debug.LogError("No boost bar for player" + playerNumber);
         }
