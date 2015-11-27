@@ -24,7 +24,11 @@ public class Player : MonoBehaviour {
     //List of platform of the player.
     public GameObject[] plateforms;
 
+    //The health bar.
 	public GameObject healthBar;
+    //The boost bar.
+    public GameObject boostBar;
+
 
     public GameObject model;
 
@@ -105,14 +109,20 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 		protectionNumber = protections.Count;
+        //TODO optimize
+        //The angle is between 360 and 270 (360 = minimum boost, 270 = maximum).
+        //We have to set it between 0 and 90 first (0 min, 90 max) and then have to normalize to between 0 and 1.
+        float boost = Mathf.Abs(this.transform.rotation.eulerAngles.z - 360) / 90;
+        if (boost == 4/*(==360 / 90 )*/) { boost = 0; }
+        //We don't activate the boost until we reach a value.
+        if (boost <= 0.15f) boost = 0;
+        if (boostBar) {
+            boostBar.GetComponent<RectTransform>().localScale = new Vector3(1f, Mathf.Max(0.10f,boost), 1f);
+
+        } else {
+            Debug.LogError("No boost bar for player" + playerNumber);
+        }
         if (currentChargingSkill) {
-            //TODO optimize
-            //The angle is between 360 and 270 (360 = minimum boost, 270 = maximum).
-            //We have to set it between 0 and 90 first (0 min, 90 max) and then have to normalize to between 0 and 1.
-            float boost = Mathf.Abs(this.transform.rotation.eulerAngles.z - 360) / 90;
-            if (boost == 4/*(==360 / 90 )*/) { boost = 0; }
-            //We don't activate the boost until we reach a value.
-            if (boost <= 0.15f) boost = 0;
             currentChargingSkill.update(this, Time.deltaTime, boost);
         }
         foreach(Skill sk in skills) {
