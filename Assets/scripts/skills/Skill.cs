@@ -19,7 +19,7 @@ public abstract class Skill : MonoBehaviour{
     /**Tell if the skill is locked by a duration debuff, or not.*/
     public bool locked = false;
     //Current lock time. if <= 0 : not locked; otherwise locked.
-    protected float lockTime = 0;
+    public float lockTime = 0;
 
     /**********************************************************/
 
@@ -41,10 +41,27 @@ public abstract class Skill : MonoBehaviour{
     /**Update the skill if the player is charging it*/
     public abstract void update(Player player, float passedTime, float boostPower);
 
-    /**Drain the charge of the skill*/
-    public abstract void drainCharge(float passedTime);
-
-    /**Lock the skill for x time, making it unchargeable nor activable.*/
+	void Update()
+	{
+		if (locked) {
+			lockTime -= Time.deltaTime;
+			if (lockTime <= 0) locked = false;
+		}
+		//Slow status.
+		if(slowed) {
+			slowTime -= Time.deltaTime;
+			if (slowTime <= 0) {
+				slowed = false;
+				//Setting back to 1 (no speed change)
+				slowChargeMultiplier = 1f;
+			}
+		}
+	}
+	
+	/**Drain the charge of the skill*/
+	public abstract void drainCharge(float passedTime);
+	
+	/**Lock the skill for x time, making it unchargeable nor activable.*/
     public void lockSkill(float lockDuration) {
         //We check whichever has the highest time and take it.
         lockTime = lockTime > lockDuration? lockTime : lockDuration;

@@ -6,6 +6,9 @@ public class plateform : MonoBehaviour {
 	public Material attack;
 	public Material defense;
 	public Material special;
+	public Material stun;
+
+	private Material savedMaterial;
 
 	public GameObject currentPlayer;
 	public SkillType skillType; 
@@ -27,6 +30,7 @@ public class plateform : MonoBehaviour {
 			attackRapide.damages = SkillManager.instance.attackRapideDamage;
 			attackRapide.dType = SkillManager.instance.attackRapideDamageType;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = attack;
+			savedMaterial = attack;
 			break;
 		case SkillType.AttaquePuissante:
 			skill = gameObject.AddComponent<AttackSkill>();
@@ -35,6 +39,7 @@ public class plateform : MonoBehaviour {
 			attackPuissante.damages = SkillManager.instance.attackPuissanteDamage;
 			attackPuissante.dType = SkillManager.instance.attackPuissanteDamageType;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = attack;
+			savedMaterial = attack;
 			break;
 		case SkillType.BouclierBasique:
 			skill = gameObject.AddComponent<DefenseSkill>();
@@ -46,6 +51,7 @@ public class plateform : MonoBehaviour {
             bouclierBasique.protectionType = ProtectionType.BouclierBasique;
 			bouclierBasique.chargeTime = SkillManager.instance.bouclierBasiqueChargeTime;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = defense;
+			savedMaterial = defense;
 			break;
 		case SkillType.BouclierFort:
             skill = gameObject.AddComponent<DefenseSkill>();
@@ -57,6 +63,7 @@ public class plateform : MonoBehaviour {
             bouclierFort.protectionType = ProtectionType.BouclierFort;
 			bouclierFort.chargeTime = SkillManager.instance.bouclierFortChargeTime;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = defense;
+			savedMaterial = defense;
 			break;
 		case SkillType.BouleDeFeu:
             skill = gameObject.AddComponent<AttackSkill>();
@@ -65,6 +72,7 @@ public class plateform : MonoBehaviour {
             bouleDeFeu.damages = SkillManager.instance.bouleDeFeuDamage;
 			bouleDeFeu.dType = SkillManager.instance.bouleDeFeuDamageType;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = special;
+			savedMaterial = special;
 			break;
 		case SkillType.LanceDeFoudre:
             skill = gameObject.AddComponent<StunAttackSkill>();
@@ -75,6 +83,7 @@ public class plateform : MonoBehaviour {
             lanceDeFoudre.dType = SkillManager.instance.lanceDeFoudreDamageType;
 			lanceDeFoudre.lockDuration = SkillManager.instance.lanceDeFoudreDuration;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = special;
+			savedMaterial = special;
 			break;
         case SkillType.EclairDeGlace:
             skill = gameObject.AddComponent<SlowAttackSkill>();
@@ -85,6 +94,7 @@ public class plateform : MonoBehaviour {
             eclairDeGlace.slowDuration = SkillManager.instance.eclairDeGlaceSlowDuration;
 			eclairDeGlace.slowPowerMultiplier = SkillManager.instance.eclairDeGlaceSlowMultiplier;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = special;
+			savedMaterial = special;
             break;
 		/*case SkillType.InterventionDivine:
 			break;*/
@@ -98,6 +108,7 @@ public class plateform : MonoBehaviour {
             coupDeGriffe.damages = SkillManager.instance.coupDeGriffeDamage;
 			coupDeGriffe.dType = SkillManager.instance.coupDeGriffeDamageType;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = attack;
+			savedMaterial = attack;
 			break;
 		/*case SkillType.Morsure:
 			break;*/
@@ -111,6 +122,7 @@ public class plateform : MonoBehaviour {
             esquive.protectionType = ProtectionType.Esquive;
 			esquive.chargeTime = SkillManager.instance.esquiveChargeTime;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = defense;
+			savedMaterial = defense;
 			break;
 		case SkillType.ContreAttaque:
             skill = gameObject.AddComponent<DefenseSkill>();
@@ -123,6 +135,7 @@ public class plateform : MonoBehaviour {
             contreAttaque.protectionType = ProtectionType.ContreAttaque;
 			contreAttaque.chargeTime = SkillManager.instance.contreAttaqueChargeTime;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = defense;
+			savedMaterial = defense;
 			break;
 		/*case SkillType.ModeChasse:
 			break;*/
@@ -134,6 +147,7 @@ public class plateform : MonoBehaviour {
 			coupDeGrace.damages = SkillManager.instance.coupDeGraceDamage;
 			coupDeGrace.dType = SkillManager.instance.coupDeGraceDamageType;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = attack;
+			savedMaterial = attack;
 			break;
 		case SkillType.ToileProtectrice:
             skill = gameObject.AddComponent<DefenseSkill>();
@@ -145,6 +159,7 @@ public class plateform : MonoBehaviour {
             toileProtectrice.protectionType = ProtectionType.ToileProtectrice;
 			toileProtectrice.chargeTime = SkillManager.instance.toileProtectriceChargeTime;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = defense;
+			savedMaterial = defense;
 			break;
 		case SkillType.PoisonParalysant:
 			skill = gameObject.AddComponent<StunAttackSkill>();
@@ -155,6 +170,7 @@ public class plateform : MonoBehaviour {
 			poisonParalisant.lockDuration = SkillManager.instance.poisonParalisantDuration;
 			poisonParalisant.random = false;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = special;
+			savedMaterial = special;
 			break;
 		/*case SkillType.PoisonZone:
 			break;
@@ -171,6 +187,10 @@ public class plateform : MonoBehaviour {
 		if (skill) 
 		{
             ChargeBar.GetComponent<UnityEngine.UI.Image>().fillAmount = skill.currentCharge / skill.chargeTime;
+			if(skill.locked)
+				transform.GetChild(0).GetComponent<MeshRenderer>().material = stun;
+			else
+				transform.GetChild(0).GetComponent<MeshRenderer>().material = savedMaterial;
 		}
 	}
 	public void setPlayerSkill(GameObject player)

@@ -29,7 +29,6 @@ public class SkillManager : MonoBehaviour {
     public float boostLifeCostPerSecond;
     /**Drain time (->when not charging) = chargeTime * drainMultiplier;*/
     public float drainMultiplier;
-    public float LifeCostPerSecond;
     public float BoostedChargeMultiplier;
 
     //Skill list.
@@ -66,8 +65,6 @@ public class SkillManager : MonoBehaviour {
     public DamageType eclairDeGlaceDamageType;
     public float eclairDeGlaceSlowMultiplier;
     public float eclairDeGlaceSlowDuration;
-	[Header("Intervention divine")]
-	public float interventionDivineChargeTime;
 	[Header("Coup de griffe")]
 	public float coupDeGriffeDamage;
     public float coupDeGriffeChargeTime;
@@ -87,10 +84,6 @@ public class SkillManager : MonoBehaviour {
 	public float contreAttaqueStandardProtection;
 	public float contreAttaqueSpecialProtection;
     public float contreAttaqueProtectionDuration;
-	[Header("Mode chasse")]
-	public float modeChasseChargeTime;
-	public float modeChasseMultiplicateur;
-    public float modeChasseDuration;
 	[Header("Coup de grace")]
 	public float coupDeGraceDamage;
 	public float coupDeGraceChargeTime;
@@ -108,14 +101,6 @@ public class SkillManager : MonoBehaviour {
 	public float poisonParalisantDamage;
 	public DamageType poisonParalisantDamageType;
 	public float poisonParalisantDuration;
-	[Header("Poison zone")]
-	public float poisonZoneDamage;
-	public float poisonZoneChargeTime;
-	public DamageType poisonZoneDamageType;
-	[Header("Jet d'acide")]
-	public float jetAcideChargeTime;
-	public float jetAcideDuration;
-	public float jetAcideDamageToProtection;
 
 	public Sprite[] sprites;
 
