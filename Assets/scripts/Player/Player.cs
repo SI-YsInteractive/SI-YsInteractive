@@ -41,6 +41,8 @@ public class Player : MonoBehaviour {
 				damages = protect.reduce (damages, dType, this);
 			}
 		}
+		if(damages > 0)
+			playHurtAnimation();
         removeLife(damages);
         //ScreenShake
         ScreenShakeManager.getInstance().AddCameraShake(1);
@@ -78,8 +80,7 @@ public class Player : MonoBehaviour {
 
     /**Remove some part of player's life*/
     public void removeLife(float minus) {
-        if(minus > 0)
-            playHurtAnimation();
+        
         life = Mathf.Clamp(life - minus, 0, startingLife);
 		healthBar.GetComponent<RectTransform> ().localScale = new Vector3(1f,life / startingLife,1f);
 		if (life <= 0)

@@ -19,7 +19,7 @@ public enum SkillType
 	//ModeChasse,
 	CoupDeGrace,
 	ToileProtectrice,
-	PoisonParalisant,
+	PoisonParalysant,
 	//PoisonZone,
 	//JetAcide,
 	

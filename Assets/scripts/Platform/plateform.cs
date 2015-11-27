@@ -146,7 +146,7 @@ public class plateform : MonoBehaviour {
 			toileProtectrice.chargeTime = SkillManager.instance.toileProtectriceChargeTime;
 			transform.GetChild(0).GetComponent<MeshRenderer>().material = defense;
 			break;
-		case SkillType.PoisonParalisant:
+		case SkillType.PoisonParalysant:
 			skill = gameObject.AddComponent<StunAttackSkill>();
 			StunAttackSkill poisonParalisant = (StunAttackSkill)skill;
 			poisonParalisant.chargeTime = SkillManager.instance.poisonParalisantChargeTime;
