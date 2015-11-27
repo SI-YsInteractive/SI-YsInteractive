@@ -15,6 +15,6 @@ public class BackButton : MonoBehaviour {
     public void back()
     {
         Destroy(GameObject.FindGameObjectWithTag("Player"));
-        Application.LoadLevel("Main");
+        Application.LoadLevel("Menu");
     }
 }
