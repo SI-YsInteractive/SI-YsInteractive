@@ -241,6 +241,46 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11492118, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 2100000, guid: 236992876c0d0d647bf7182e59a70813, type: 2}
+    - target: {fileID: 11476836, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 2100000, guid: 236992876c0d0d647bf7182e59a70813, type: 2}
+    - target: {fileID: 11470726, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 2100000, guid: 236992876c0d0d647bf7182e59a70813, type: 2}
+    - target: {fileID: 11467250, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 2100000, guid: 236992876c0d0d647bf7182e59a70813, type: 2}
+    - target: {fileID: 11465540, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 2100000, guid: 236992876c0d0d647bf7182e59a70813, type: 2}
+    - target: {fileID: 11462874, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 2100000, guid: 236992876c0d0d647bf7182e59a70813, type: 2}
+    - target: {fileID: 11429884, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 2100000, guid: 236992876c0d0d647bf7182e59a70813, type: 2}
+    - target: {fileID: 11427972, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 2100000, guid: 236992876c0d0d647bf7182e59a70813, type: 2}
+    - target: {fileID: 11410442, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 2100000, guid: 236992876c0d0d647bf7182e59a70813, type: 2}
+    - target: {fileID: 11402192, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
+      propertyPath: stun
+      value: 
+      objectReference: {fileID: 2100000, guid: 236992876c0d0d647bf7182e59a70813, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cea908859d288f44dbf45a7f6797f255, type: 2}
   m_IsPrefabParent: 0
@@ -1088,6 +1128,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 3c52676c2e52a944cb12aa06968f09d0,
         type: 3}
+    - target: {fileID: 11479520, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
+      propertyPath: lanceDeFoudreDuration
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ae66c74f42d2f14588004da0b7b8092, type: 2}
   m_IsPrefabParent: 0

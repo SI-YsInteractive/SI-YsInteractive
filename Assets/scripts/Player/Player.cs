@@ -105,7 +105,6 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 		protectionNumber = protections.Count;
-        if (currentChargingSkill) {
             //TODO optimize
             //The angle is between 360 and 270 (360 = minimum boost, 270 = maximum).
             //We have to set it between 0 and 90 first (0 min, 90 max) and then have to normalize to between 0 and 1.
@@ -113,6 +112,7 @@ public class Player : MonoBehaviour {
             if (boost == 4/*(==360 / 90 )*/) { boost = 0; }
             //We don't activate the boost until we reach a value.
             if (boost <= 0.15f) boost = 0;
+		if (currentChargingSkill) {
             currentChargingSkill.update(this, Time.deltaTime, boost);
         }
         foreach(Skill sk in skills) {
