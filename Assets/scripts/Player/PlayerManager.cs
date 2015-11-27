@@ -46,7 +46,8 @@ public class PlayerManager : MonoBehaviour {
 
 
     /**Send damage to one player and then check for the victory of one of the players.*/
-	public void sendDamage(Player target, float dommages, DamageType dType) {
+	public void sendDamage(Player target, float dommages, DamageType dType) 
+    {
         target.takeDamage(dType, dommages);
     }
 

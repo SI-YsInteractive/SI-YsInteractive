@@ -10,8 +10,16 @@ public class AttackSkill : ActivableSkill{
     public float damages;
     public DamageType dType;
 
+    private Player p;
+
     protected override void action(Player player) {
-        PlayerManager.getInstance().sendDamage(PlayerManager.getInstance().getOtherPlayer(player), damages, dType);
+        p = player;
+        Invoke("launchAttack", 0.1f);
     }
 
+    public void launchAttack()
+    {
+        PlayerManager.getInstance().sendDamage(PlayerManager.getInstance().getOtherPlayer(p), damages, dType);
+        p.playAnimationAttack();
+    }
 }

@@ -18,6 +18,9 @@ public class DefenseSkill : ActivableSkill {
     public float specialAttackFixedProtection;
     public float standardAttackFixedProtection;
 
+
+    private Player p;
+
     protected override void action(Player player) {
         Protection protection;
         switch(protectionType)
@@ -55,6 +58,8 @@ public class DefenseSkill : ActivableSkill {
 
         }
         player.addProtection(protection);
+        player.playDefenseAnimation();
     }
+
 
 }

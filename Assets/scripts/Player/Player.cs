@@ -26,6 +26,8 @@ public class Player : MonoBehaviour {
 
 	public GameObject healthBar;
 
+    public GameObject model;
+
     //Return player's life.
     public float getLife() {
         return life;
@@ -76,6 +78,8 @@ public class Player : MonoBehaviour {
 
     /**Remove some part of player's life*/
     public void removeLife(float minus) {
+        if(minus > 0)
+            playHurtAnimation();
         life = Mathf.Clamp(life - minus, 0, startingLife);
 		healthBar.GetComponent<RectTransform> ().localScale = new Vector3(1f,life / startingLife,1f);
 		if (life <= 0)
@@ -116,5 +120,20 @@ public class Player : MonoBehaviour {
                 sk.drainCharge(Time.deltaTime);
             }
         }
+    }
+
+    public void playAnimationAttack()
+    {
+        model.GetComponent<Animator>().SetTrigger("attaque");
+    }
+
+    public void playDefenseAnimation()
+    {
+        model.GetComponent<Animator>().SetTrigger("defense");
+    }
+
+    public void playHurtAnimation()
+    {
+        model.GetComponent<Animator>().SetTrigger("hurt");
     }
 }
